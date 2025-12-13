@@ -28,7 +28,26 @@ button {
 
 a {
   border-radius: 8px;
-  color: #ffffff;
+  color: #02060a;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Active */
+a:active {
+  color: #88765c;
+}
+
+/* Disabled (приклад через клас) */
+a.disabled,
+a[disabled] {
+  color: #02060a;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 .loader {
