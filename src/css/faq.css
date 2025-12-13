@@ -1,0 +1,111 @@
+/* контейнер: */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: #f6f4f1;
+  padding: 64px 0;
+}
+/* заголовок */
+.faq-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #02060a;
+  padding-bottom: 40px;
+}
+/* картка */
+.faq-item {
+  min-width: 335px;
+  min-height: 112px;
+  background: #eee9e3;
+  border: 0px solid rgba(2, 6, 10, 0.15);
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+/* прибрати дефолти  accordion-js */
+.faq .ac .ac-trigger::after,
+.faq .ac.is-active > .ac-header .ac-trigger::after {
+  content: none;
+}
+.faq .ac {
+  --color-white: #02060a;
+  --color-light-grey: #02060a;
+  --color-grey: #02060a;
+}
+
+/* іконки  */
+.faq-icons {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  margin-left: 16px;
+}
+
+.faq-icons svg {
+  position: absolute;
+  inset: 0;
+  width: 14px;
+  height: 14px;
+}
+
+/* колір/обводка іконок */
+.faq-icons svg use {
+  fill: #02060a;
+  stroke: #02060a;
+  stroke-width: 1.5px;
+}
+
+/* перемикання + / close */
+.icon-close {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.ac.is-active .icon-plus {
+  opacity: 0;
+}
+.ac.is-active .icon-close {
+  opacity: 1;
+}
+
+/* панель відповіді:*/
+.faq-panel .faq-text,
+.faq-panel .ac-text {
+  padding: 24px;
+}
+/* Центруемо svg*/
+.faq-container .ac .ac-trigger.faq-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ac-text-title {
+  padding-bottom: 8px;
+}
+.fag-list-li {
+  padding-bottom: 8px;
+}
+.ac-panel {
+  transition: padding 0.25s ease;
+}
+.faq-list-first {
+  padding-bottom: 8px;
+}
+
+.faq-list {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+@media screen and (min-width: 1440px) {
+  .faq-item {
+    max-width: 864px;
+  }
+}
