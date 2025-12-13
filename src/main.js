@@ -6,10 +6,8 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 import axios from 'axios';
 
-import Swiper, { Navigation, Pagination} from 'swiper';
+import Swiper from 'swiper';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 import Accordion from "accordion-js";
 import "accordion-js/dist/accordion.min.css";
@@ -31,4 +29,4 @@ import './js/success-stories.js';
 import './js/animal-detail.js';
 import './js/order-model.js';
 import './js/footer.js'
-import { Navigation, Pagination } from "swiper/modules";
+
