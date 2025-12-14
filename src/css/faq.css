@@ -16,11 +16,11 @@
   letter-spacing: -0.01em;
   text-align: center;
   color: #02060a;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 /* картка */
 .faq-item {
-  min-width: 335px;
+  min-width: 100%;
   min-height: 112px;
   background: #eee9e3;
   border: 0px solid rgba(2, 6, 10, 0.15);
@@ -73,11 +73,6 @@
   opacity: 1;
 }
 
-/* панель відповіді:*/
-.faq-panel .faq-text,
-.faq-panel .ac-text {
-  padding: 24px;
-}
 /* Центруемо svg*/
 .faq-container .ac .ac-trigger.faq-trigger {
   display: flex;
