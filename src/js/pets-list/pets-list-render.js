@@ -28,8 +28,6 @@ export function renderFilters(categories) {
       .join('')}
       
   `;
-
-  refs.filterBtns = document.querySelectorAll('.filter-btn');
 }
 
 export function renderAnimals(animals, append = false) {
@@ -38,7 +36,9 @@ export function renderAnimals(animals, append = false) {
   const markup = animals
     .map(animal => {
       const categoriesMarkup = animal.categories
-        .map(pet => `<li class="animal-card-category">${pet.name}</li>`)
+        .map(
+          category => `<li class="animal-card-category">${category.name}</li>`
+        )
         .join('');
       return `
     <li class="animal-card">

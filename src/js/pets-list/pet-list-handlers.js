@@ -9,7 +9,7 @@ export let currentCategory = '';
 let currentPage = 1;
 let itemsPerPage = 9;
 
-export function handleFilterClick(e) {
+export async function handleFilterClick(e) {
   if (!e.target.classList.contains('filter-btn')) return;
 
   const btns = refs.filtersContainer.querySelectorAll('.filter-btn');
@@ -19,9 +19,15 @@ export function handleFilterClick(e) {
   currentCategory = e.target.dataset.id;
 
   currentPage = 1;
-  showLoader();
-  loadAnimals();
-  hideLoader();
+  try {
+    await loadAnimals(false);
+  } catch (err) {
+    iziToast.error({
+      message: `Помилка завантаження тварин ${err}`,
+    });
+  } finally {
+    hideLoader();
+  }
 }
 
 export async function handleLoadMoreClick() {
@@ -38,7 +44,7 @@ export async function handleLoadMoreClick() {
     }
   } catch (err) {
     iziToast.error({
-      message: `Помилка завантаження тварин: ${err}`,
+      message: `Помилка завантаження тварин ${err}`,
     });
     refs.loadMoreBtn.style.display = 'block';
   } finally {
@@ -48,13 +54,11 @@ export async function handleLoadMoreClick() {
 
 export async function loadAnimals(append = false) {
   try {
-    const data = await fetchAnimals(
-      currentCategory || null,
-      currentPage,
-      itemsPerPage
-    );
+    const data = await fetchAnimals(currentCategory, currentPage, itemsPerPage);
 
-    if (!data.animals) return false;
+    if (!data.animals) {
+      return false;
+    }
 
     const animals = data.animals;
 
@@ -63,7 +67,7 @@ export async function loadAnimals(append = false) {
     return animals.length === itemsPerPage;
   } catch (err) {
     iziToast.error({
-      message: `Помилка завантаження тварин: ${err}`,
+      message: `Помилка завантаження тварин ${err}`,
     });
   }
 }
