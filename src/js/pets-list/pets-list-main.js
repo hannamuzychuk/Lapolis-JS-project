@@ -10,6 +10,7 @@ import {
 import { refs } from './pets-list-refs';
 import { hideLoader, renderFilters, showLoader } from './pets-list-render';
 import { setupModal } from '../animal-detail';
+import { openOrderModal } from '../order-model';
 
 async function init() {
   try {
@@ -37,4 +38,5 @@ async function init() {
   }
 }
 setupModal();
+openOrderModal();
 init();

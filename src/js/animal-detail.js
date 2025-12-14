@@ -1,8 +1,8 @@
 import { currentAnimals } from './pets-list/pet-list-handlers';
 
 export function setupModal() {
-  const modal = document.querySelector('.modal');
-  const modalContent = modal.querySelector('.modal-content');
+  const modal = document.querySelector('.modal-overlay');
+  const infoModal = modal.querySelector('.info-modal');
 
   document.addEventListener('click', e => {
     if (e.target.classList.contains('more-btn')) {
@@ -10,8 +10,8 @@ export function setupModal() {
       const animal = currentAnimals.find(a => a._id === animalId);
       if (!animal) return;
 
-      modalContent.innerHTML = `
-        <span class="close-btn">&times;</span>
+      infoModal.innerHTML = `
+        <button class="close-btn">&times;</button>
         <div class="modal-body">
       <div class="modal-left">
         <img class="modal-animal-img" src="${animal.image}" alt="${animal.name}"  />
@@ -31,13 +31,15 @@ export function setupModal() {
     </div>`;
 
       modal.classList.remove('hidden');
+      infoModal.classList.remove('hidden')
     }
 
     if (
       e.target.classList.contains('close-btn') ||
-      e.target.classList.contains('modal')
+      e.target.classList.contains('modal-overlay')
     ) {
       modal.classList.add('hidden');
+      infoModal.classList.add('hidden')
     }
   });
 }

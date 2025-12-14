@@ -1,82 +1,193 @@
-.modal {
+.modal-overlay {
   position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
-
+  align-items: center;
   z-index: 1000;
 }
 
-/* ховаємо */
-.modal.hidden {
-  display: none;
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
 }
 
-/* контент модалки */
-.modal-content {
-  position: relative;
-  background-color: #fff;
-  max-width: 900px;
-  width: 90%;
-  max-height: 90vh;
-
-  overflow-y: auto;
-  border-radius: 16px;
-  padding: 24px;
-
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+.modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .close-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
-
-  font-size: 32px;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
   cursor: pointer;
-  line-height: 1;
+  border: none;
+  background-color: transparent;
+  color: black;
 }
 
 .modal-body {
   display: flex;
-  gap: 24px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-/* ліва частина */
 .modal-left {
-  flex: 1;
+  flex: 1 1 300px;
 }
 
-.modal-animal-img {
+.modal-left img {
   width: 100%;
-  border-radius: 12px;
+  height: auto;
+  border-radius: 10px;
   object-fit: cover;
 }
 
-/* права частина */
 .modal-right {
-  flex: 1;
-}
-
-.modal-name {
-  margin: 8px 0;
-  font-size: 28px;
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .modal-species {
-  color: #777;
   font-size: 14px;
-  text-transform: uppercase;
+  color: #555;
+}
+
+.modal-name {
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+.modal-info {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #555;
 }
 
 .modal-info span {
-  margin-right: 12px;
   font-weight: 500;
 }
 
-.modal-description {
+.modal-right p {
+  margin: 5px 0;
   line-height: 1.5;
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-adopt-btn {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #8b7155;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: start;
+  transition: background-color 0.3s;
+}
+
+.modal-adopt-btn:hover {
+  background-color: #7a6147;
+}
+.order-modal{
+    padding: 64px 20px;
+}
+.order-modal__title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: #111827;
+  align-self: center;
+}
+
+/* ===== Form ===== */
+.order-form {   
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+/* ===== Form group ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #111827;
+}
+
+.form-group label span {
+  color: #dc2626;
+}
+
+/* ===== Inputs ===== */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: #efede9;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #111827;
+  resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #6b7280;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: #e9e6e1;
+}
+
+/* ===== Submit button ===== */
+.submit-btn {
+  margin-top: 12px;
+  padding: 14px;
+  background: #8b7355;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: #7a644b;
+}
+.hidden{
+  display: none;
+
 }
