@@ -24,6 +24,7 @@ import 'modern-normalize/modern-normalize.css';
 
 import './js/header.js';
 import './js/mobile-menu.js';
+import '/js/bottom-up.js';
 import './js/hero.js';
 import './js/pets-list.js';
 import './js/about-us.js';
