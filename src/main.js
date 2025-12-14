@@ -31,5 +31,3 @@ import './js/success-stories.js';
 import './js/animal-detail.js';
 import './js/order-model.js';
 import './js/footer.js';
-import './js/api';
-
