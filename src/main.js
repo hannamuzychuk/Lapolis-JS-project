@@ -11,7 +11,7 @@
 
 // import Accordion from "accordion-js";
 // import "accordion-js/dist/accordion.min.css";
- 
+
 // import Swal from 'sweetalert2';
 
 // import Raty from "raty-js";
@@ -24,7 +24,7 @@ import 'modern-normalize/modern-normalize.css';
 
 import './js/header.js';
 import './js/hero.js';
-import './js/pets-list.js';
+import './js/pets-list/pets-list-main.js';
 import './js/about-us.js';
 import './js/faq.js';
 import './js/success-stories.js';
@@ -32,4 +32,3 @@ import './js/animal-detail.js';
 import './js/order-model.js';
 import './js/footer.js';
 import './js/api';
-

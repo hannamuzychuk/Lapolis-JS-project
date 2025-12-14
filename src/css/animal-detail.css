@@ -1,0 +1,82 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+}
+
+/* ховаємо */
+.modal.hidden {
+  display: none;
+}
+
+/* контент модалки */
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;
+
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 24px;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-body {
+  display: flex;
+  gap: 24px;
+}
+
+/* ліва частина */
+.modal-left {
+  flex: 1;
+}
+
+.modal-animal-img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* права частина */
+.modal-right {
+  flex: 1;
+}
+
+.modal-name {
+  margin: 8px 0;
+  font-size: 28px;
+}
+
+.modal-species {
+  color: #777;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.modal-info span {
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+.modal-description {
+  line-height: 1.5;
+}
