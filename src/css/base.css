@@ -33,7 +33,7 @@ a {
 
 a:hover,
 a:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Active */
@@ -64,8 +64,8 @@ a[disabled] {
   height: 46px;
   margin: 1px;
   border-radius: 50%;
-  border: 5px solid #4e75ff;
-  border-color: #4e75ff transparent #4e75ff transparent;
+  border: 5px solid #88765c;
+  border-color: #88765c transparent #88765c transparent;
   animation: dual-ring 1.2s linear infinite;
 }
 
