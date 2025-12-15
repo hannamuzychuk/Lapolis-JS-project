@@ -1,3 +1,12 @@
 .active {
   background-color: blue;
 }
+
+.filter-btn {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+
+  /* line-height: 24px; */
+  line-height: 1.5;
+}

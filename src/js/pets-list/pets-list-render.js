@@ -19,11 +19,11 @@ export function renderFilters(categories) {
   });
 
   refs.filtersContainer.innerHTML = `
-    <button class="filter-btn active" data-id="">Всі</button>
+    <li class="filter-item"><button class="filter-btn active" data-id="">Всі</button></li>
     ${categories
       .map(
         category =>
-          `<button class="filter-btn" data-id="${category._id}">${category.name}</button>`
+          `<li class="filter-item"><button class="filter-btn" data-id="${category._id}">${category.name}</button></li>`
       )
       .join('')}
       
@@ -42,19 +42,27 @@ export function renderAnimals(animals, append = false) {
         .join('');
       return `
     <li class="animal-card">
-      <img src="${animal.image}" alt="${animal.name}" class="animal-img" />
-      <div class="animal-card-content">
-      <span class="animal-card-species">${animal.species} </span>
-      <h3 class="animal-card-name">${animal.name}</h3>
-      <ul class="animal-card-categories">${categoriesMarkup}</ul>
-      <div class="animal-card-info">
-      <span>${animal.age}</span>
-      <span>${animal.gender}</span>
-    </div>
-      <p class="animal-card-short-description">${animal.shortDescription}</p>
-      <button class="more-btn" data-id="${animal._id}">Дізнатись більше</button>
-      </div>
-    </li>
+        <img src="${animal.image}" alt="${animal.name}" class="animal-img" />
+        <div class="animal-card-content">
+          <div class="animal-card-details">
+            <span class="animal-card-species">${animal.species} </span>
+            <h3 class="animal-card-name">${animal.name}</h3>
+            <ul class="animal-card-categories">
+              ${categoriesMarkup}
+            </ul>
+            <div class="animal-card-info">
+              <span>${animal.age}</span>
+              <span>${animal.gender}</span>
+            </div>
+          </div>
+          <p class="animal-card-short-description">
+            ${animal.shortDescription}
+          </p>
+          <button class="more-btn" data-id="${animal._id}">
+            Дізнатись більше
+          </button>
+        </div>
+      </li>
   `;
     })
     .join('');
