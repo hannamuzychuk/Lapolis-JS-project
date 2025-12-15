@@ -2,7 +2,7 @@ import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const baseURL = 'https://paw-hut.b.goit.study/api';
+export const baseURL = 'https://paw-hut.b.goit.study/api';
 
 export async function fetchCategories() {
   try {

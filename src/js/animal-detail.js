@@ -1,14 +1,22 @@
 import { currentAnimals } from './pets-list/pet-list-handlers';
-
-export function setupModal() {
   const modal = document.querySelector('.modal-overlay');
   const infoModal = modal.querySelector('.info-modal');
+  const orderModal = modal.querySelector('.order-modal');
+  import { form } from './order-model';
 
+export function openOrderModal(infoModal, orderModal) {
+  infoModal.classList.add('hidden');
+  orderModal.classList.remove('hidden');
+  document.body.classList.add('no-scroll');
+}
+
+export function setupModal() {
   document.addEventListener('click', e => {
     if (e.target.classList.contains('more-btn')) {
       const animalId = e.target.dataset.id;
       const animal = currentAnimals.find(a => a._id === animalId);
       if (!animal) return;
+      form.dataset.animalId = animalId;
 
       infoModal.innerHTML = `
         <button class="close-btn">&times;</button>
@@ -31,7 +39,9 @@ export function setupModal() {
     </div>`;
 
       modal.classList.remove('hidden');
-      infoModal.classList.remove('hidden')
+      infoModal.classList.remove('hidden');
+      orderModal.classList.add('hidden');
+      document.body.classList.add('no-scroll');
     }
 
     if (
@@ -39,7 +49,18 @@ export function setupModal() {
       e.target.classList.contains('modal-overlay')
     ) {
       modal.classList.add('hidden');
-      infoModal.classList.add('hidden')
+      document.body.classList.remove('no-scroll');
     }
+    if (e.target.closest('.modal-adopt-btn')) {
+    openOrderModal(infoModal, orderModal);
+  return;
+}
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      modal.classList.add('hidden');
+      document.body.classList.remove('no-scroll');
+    }
+  });
+
   });
 }

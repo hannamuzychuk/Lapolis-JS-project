@@ -1,0 +1,79 @@
+.order-modal__title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: #111827;
+  align-self: center;
+}
+
+/* ===== Form ===== */
+.order-form {   
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+/* ===== Form group ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #111827;
+}
+
+.form-group label span {
+  color: #dc2626;
+}
+
+/* ===== Inputs ===== */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: #efede9;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #111827;
+  resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #6b7280;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: #e9e6e1;
+}
+
+/* ===== Submit button ===== */
+.submit-btn {
+  margin-top: 12px;
+  padding: 14px;
+  background: #8b7355;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: #7a644b;
+}
+.hidden{
+  display: none;
+
+}

@@ -1,23 +1,37 @@
-import { setupModal } from "./animal-detail";
-
-export function openOrderModal() {
-  const modalOverlay = document.querySelector('.modal-overlay');
-  const infoModal = modalOverlay.querySelector('.info-modal');
-  const orderModal = modalOverlay.querySelector('.order-modal');
-  
-
-  modalOverlay.addEventListener('click', (e) => {
+import axios from "axios";
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+import { baseURL } from "./pets-list/pets-list-api";
+export const form = document.querySelector('.order-form')
+form.addEventListener('submit',async e=>{
     e.preventDefault();
-    if (e.target.classList.contains('close-btn') ||
-      e.target.classList.contains('modal-overlay')) {
-        orderModal.classList.add('hidden');
-        infoModal.classList.add('hidden');
-        modalOverlay.classList.add('hidden');
-      };
-
+    const animalId = e.target.dataset.animalId;
+    const { name ,phone, comment } = e.target.elements;
+    const formData = {
+        name: name.value,
+        phone: phone.value,
+        comment: comment.value,
+        animalId,
+    };
     
-
-    infoModal.classList.add('hidden');
-    orderModal.classList.remove('hidden');
-  });
-}
+    try{
+        const response= await axios.post(
+            `${baseURL}/orders`,
+            formData
+        );
+        const orderData = response.data;
+        console.log('orderData>>>', orderData);
+        Swal.fire({
+            title: "Хороша робота!",
+            text: "Ваше замовлення відправлено!",
+            icon: "success"
+        });
+        e.target.reset();
+    }catch(error){
+        Swal.fire({
+            title: "Ой ой?",
+            text: "Якась помилка - спробуй ще",
+            icon: "question"
+            });
+    }
+})
