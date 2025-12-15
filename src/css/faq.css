@@ -5,9 +5,10 @@
   align-items: center;
   gap: 16px;
   background: #f6f4f1;
-  padding: 64px 0;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #02060a;
+  padding-bottom: 64px;
+  padding-top: 64px;
 }
 
 /* заголовок */
@@ -42,7 +43,9 @@
   --color-light-grey: #02060a;
   --color-grey: #02060a;
 }
-
+#faq-panel {
+  padding-top: 20px;
+}
 /* Тригер аккордеона під макет */
 .ac .ac-trigger {
   font-size: 16px;
@@ -51,6 +54,7 @@
   line-height: 1.5;
   background: transparent;
   border: 0;
+  padding: 0;
 }
 
 /* Центруємо й виставляємо геп */
