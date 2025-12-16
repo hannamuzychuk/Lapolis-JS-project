@@ -43,21 +43,24 @@ export function renderAnimals(animals, append = false) {
       return `
     <li class="animal-card">
         <img src="${animal.image}" alt="${animal.name}" class="animal-img" />
-        <div class="animal-card-content">
-          <div class="animal-card-details">
-            <span class="animal-card-species">${animal.species} </span>
-            <h3 class="animal-card-name">${animal.name}</h3>
-            <ul class="animal-card-categories">
-              ${categoriesMarkup}
-            </ul>
-            <div class="animal-card-info">
-              <span>${animal.age}</span>
-              <span>${animal.gender}</span>
+        
+          <div class="animal-card-content">
+          <div class="animal-card-wrapper">
+            <div class="animal-card-details">
+              <span class="animal-card-species">${animal.species} </span>
+              <h3 class="animal-card-name">${animal.name}</h3>
+              <ul class="animal-card-categories">
+                ${categoriesMarkup}
+              </ul>
+              <div class="animal-card-info">
+                <span>${animal.age}</span>
+                <span>${animal.gender}</span>
+              </div>
             </div>
-          </div>
-          <p class="animal-card-short-description">
-            ${animal.shortDescription}
-          </p>
+            <p class="animal-card-short-description">
+              ${animal.shortDescription}
+            </p>
+        </div>
           <button class="more-btn" data-id="${animal._id}">
             Дізнатись більше
           </button>
