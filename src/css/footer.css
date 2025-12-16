@@ -42,14 +42,14 @@
 
 .footer-logo:hover,
 .footer-logo:focus {
-    color: #fff;
+    color: #88765c;
   
 }
 .footer-logo:hover .footer-logo-text,
 .footer-logo:focus .footer-logo-text,
 .footer-logo:hover .footer-logo-svg,
 .footer-logo:focus .footer-logo-svg {
-    color:#fff;
+    color:#88765c;
     transform: scale(1.05);
 }
 
@@ -100,28 +100,39 @@
     color: #02060a;
     cursor: pointer;
     transition: color 250ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
     
 
 .footer-social-link:hover,
 .footer-social-link:focus {
     color: #443b2e;
+    transform: scale(1.1);
+    outline: none;
+    
 }
+
 
 .footer-social-link:active {
     color: #88765c;
+    transform: scale(1);
 }
 
-.footer-social-link:disabled {
-    color: #88765c;
-    opacity: 0.3;
-}
 
 .footer-social-icon {
     fill: currentColor;
+    transition: inherit;
 }
-     
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon,
+.social-link:active .social-icon{
+transform: scale(1.2);
+}
  
+
 .footer-copyright {
     font-weight: 400;
     position: relative;
