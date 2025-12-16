@@ -75,7 +75,7 @@
 #about-swiper-pagination {
   transform: none;
 }
-
+/* буллети */
 .about-controls .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
