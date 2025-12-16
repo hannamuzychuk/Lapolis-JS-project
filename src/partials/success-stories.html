@@ -1,0 +1,45 @@
+<section class="success-stories" id="success-stories">
+  <div class="container success-stories__container">
+    <h2 class="success-stories__title">Щасливі історії, що надихають</h2>
+    <p class="success-stories__subtitle">
+      Ці хвостики вже знайшли свій дім. Ваш майбутній друг теж чекає на вас
+    </p>
+
+    <div class="success-stories__slider">
+      <div class="swiper success-stories__swiper" data-success-swiper>
+        <div class="swiper-wrapper">
+          <!-- Slides render here from API (/feedbacks) -->
+        </div>
+      </div>
+
+      <div class="success-stories__controls">
+        <div class="swiper-pagination success-stories__pagination"></div>
+
+        <div class="success-stories__nav">
+          <button
+            class="success-stories__btn success-stories__btn--prev"
+            type="button"
+            aria-label="Попередній відгук"
+            data-success-prev
+          >
+            <svg class="success-stories__btn-icon" width="24" height="24" aria-hidden="true">
+              <use href="./img/icons.svg#icon-left"></use>
+            </svg>
+          </button>
+
+          <button
+            class="success-stories__btn success-stories__btn--next"
+            type="button"
+            aria-label="Наступний відгук"
+            data-success-next
+          >
+            <svg class="success-stories__btn-icon" width="24" height="24" aria-hidden="true">
+              <use href="./img/icons.svg#icon-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
