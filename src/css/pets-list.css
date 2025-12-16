@@ -80,6 +80,7 @@ img {
   flex-direction: column;
   margin-top: 32px;
   gap: 32px;
+  align-items: stretch;
 }
 
 @media only screen and (min-width: 768px) {
@@ -96,6 +97,8 @@ img {
 }
 
 .animal-card {
+  display: flex;
+  flex-direction: column;
   background-color: #EEE9E3;
   border-radius: 16px;
   padding: 12px;
@@ -132,9 +135,10 @@ img {
 
 .animal-card-content {
   margin-top: 16px;
+  gap:16px;
   display: flex;
-    flex-direction: column;
-    height: 100%;
+  flex-direction: column;
+  height: 100%;
 }
 
 .animal-card-species {
@@ -145,8 +149,9 @@ img {
   display: flex;
   flex-direction: column;
   gap:4px;
-  justify-content: space-around;
+  height: 100%;
 }
+
 
 @media only screen and (min-width: 1440px) {
   .animal-card-species {
@@ -166,19 +171,18 @@ img {
     font-size: 24px;
   }
 }
-
+.animal-card-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  height: 100%;
+}
 .animal-card-categories {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  padding-bottom: 4px;
-}
-@media only screen and (min-width: 1440px) {
-  .animal-card-categories {
-      padding-bottom: 46px;
-    }
-}
 
+}
 .animal-card-category {
   font-weight: 600;
   font-size: 10px;
@@ -200,6 +204,7 @@ img {
   column-gap: 16px;
   font-size: 10px;
   line-height: 1.5;
+  margin-top: auto;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -209,10 +214,8 @@ img {
 }
 
 .animal-card-short-description {
-  margin-top: 16px;
   font-size: 12px;
   line-height: 1.5;
-  margin-bottom: 16px;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -249,10 +252,6 @@ img {
   .more-btn {
       font-size: 16px;
     }
-}
-.animal-card {
-  display: flex;
-  flex-direction: column;
 }
 .pets-list-load-more-btn{
   display: block;
