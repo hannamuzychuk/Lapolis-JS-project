@@ -19,6 +19,7 @@ export async function handleFilterClick(e) {
   currentCategory = e.target.dataset.id;
 
   currentPage = 1;
+  refs.loadMoreBtn.style.display = 'block';
   try {
     await loadAnimals(false);
   } catch (err) {
