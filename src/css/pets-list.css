@@ -1,12 +1,297 @@
-.active {
-  background-color: blue;
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.pets-list {
+  padding: 64px 0 32px 0;
+}
+
+@media only screen and (min-width: 1440px) {
+  .pets-list {
+    padding: 80px 0 32px 0;
+  }
+}
+
+.pets-list-ttl {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -0.01em;
+}
+
+@media only screen and (min-width: 1440px) {
+  .pets-list-ttl {
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: -0.01em;
+  }
+}
+
+.pets-list-txt {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .pets-list-txt {
+    font-size: 18px;
+  }
+}
+
+.pets-list-categories {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .pets-list-categories {
+      padding: 0 130px;
+    }
 }
 
 .filter-btn {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-
-  /* line-height: 24px; */
+  font-size: 14px;
   line-height: 1.5;
+  color:#02060A;
+  background-color: transparent;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 16px;
+}
+@media only screen and (min-width: 1440px) {
+  .filter-btn {
+      font-size: 16px;
+    }
+}
+.active {
+  background-color:#EEE9E3;
+  font-weight: 500;
+}
+
+.pets-list-animals {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  gap: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .pets-list-animals {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .pets-list-animals {
+    margin-top: 40px;
+  }
+}
+
+.animal-card {
+  background-color: #EEE9E3;
+  border-radius: 16px;
+  padding: 12px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .animal-card {
+    width: calc((100% - 32px)/2);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .animal-card {
+    width: calc((100% - 32px * 2)/3);
+  }
+}
+
+.animal-img {
+  border-radius: 8px;
+  width: 311px;
+  height: 245px;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 1440px) {
+  .animal-img {
+    border-radius: 8px;
+    width: 392px;
+    height: 309px;
+    object-fit: cover;
+  }
+}
+
+.animal-card-content {
+  margin-top: 16px;
+  display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.animal-card-species {
+  font-size: 10px;
+  line-height: 1.5;
+}
+.animal-card-details {
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 1440px) {
+  .animal-card-species {
+    font-size: 12px;
+  }
+}
+
+.animal-card-name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+@media only screen and (min-width: 1440px) {
+  .animal-card-name {
+    font-size: 24px;
+  }
+}
+
+.animal-card-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding-bottom: 4px;
+}
+@media only screen and (min-width: 1440px) {
+  .animal-card-categories {
+      padding-bottom: 46px;
+    }
+}
+
+.animal-card-category {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 1.5;
+  border-radius: 100px;
+  padding: 4px 10px;
+  background-color: #02060A0D;
+}
+
+@media only screen and (min-width: 1440px) {
+  .animal-card-category {
+    font-size: 12px;
+  }
+}
+
+.animal-card-info {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 1440px) {
+  .animal-card-info {
+    font-size: 12px;
+  }
+}
+
+.animal-card-short-description {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.5;
+      margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .animal-card-short-description {
+    font-size: 14px;
+  }
+}
+
+.more-btn {
+  width: 100%;
+  padding: 8px 20px;
+  margin-top: auto;
+  border: 1px solid #02060A;
+  color:#02060A;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: transparent;
+  transition:
+      color 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+}
+.more-btn:hover{
+  background-color: #C3B49D;
+}
+.more-btn:focus {
+  background-color: #C3B49D;
+}
+.more-btn:active {
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03), inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  background-color: #C3B49D;
+}
+@media only screen and (min-width: 1440px) {
+  .more-btn {
+      font-size: 16px;
+    }
+}
+.animal-card {
+  display: flex;
+  flex-direction: column;
+}
+.pets-list-load-more-btn{
+  display: block;
+  margin: 40px auto 0;
+  width: 100%;
+  padding: 12px 24px;
+  border: 1px solid #88765C;
+  font-size: 14px;
+  line-height: 1.5;
+  transition:
+      color 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+}
+@media only screen and (min-width: 768px) {
+  .pets-list-load-more-btn {
+      width: 335px;
+    }
+}
+@media only screen and (min-width: 1440px) {
+  .pets-list-load-more-btn {
+    width: 192px;
+    font-size: 16px;
+  }
+}
+.pets-list-load-more-btn:hover{
+  color:#02060A;
+  border: 1px solid #88765C;
+  background-color: #EEE9E3;
+}
+.pets-list-load-more-btn:focus {
+  color: #02060A;
+  border: 1px solid #88765C;
+  background-color: #EEE9E3;
+}
+.pets-list-load-more-btn:active {
+  color: #02060A;
+  border: 1px solid #88765C;
+  background-color: #EEE9E3;
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03), inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
