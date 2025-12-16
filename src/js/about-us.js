@@ -27,9 +27,9 @@ const swiper = new Swiper('.about-swiper', {
     dynamicMainBullets: 1,
   },
   breakpoints: {
-    768: {  // планшет і вище
+    768: { 
       pagination: {
-        dynamicBullets: false, // стаціонарні булети
+        dynamicBullets: false,
       }
     }
   }
