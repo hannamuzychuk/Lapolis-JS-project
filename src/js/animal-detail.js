@@ -1,5 +1,5 @@
 import { currentAnimals } from './pets-list/pet-list-handlers';
-  const modal = document.querySelector('.modal-overlay');
+export const modal = document.querySelector('.modal-overlay');
   const infoModal = modal.querySelector('.info-modal');
   const orderModal = modal.querySelector('.order-modal');
   import { form } from './order-model';
@@ -25,12 +25,15 @@ export function setupModal() {
         <img class="modal-animal-img" src="${animal.image}" alt="${animal.name}"  />
       </div>
       <div class="modal-right">
+      <div class="modal-info-head">
         <span class="modal-species">${animal.species}</span>
         <h2 class="modal-name">${animal.name}</h2>
         <div class="modal-info">
           <span class="modal-age">${animal.age}</span>
           <span class="modal-gender">${animal.gender}</span>
         </div>
+      </div>
+        
         <p><strong>Опис:</strong> <span class="modal-description">${animal.description}</span></p>
         <p><strong>Здоров'я:</strong> <span class="modal-health">${animal.healthStatus}</span></p>
         <p><strong>Поведінка:</strong> <span class="modal-behavior">${animal.behavior}</span></p>

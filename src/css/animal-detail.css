@@ -22,23 +22,22 @@
   position: relative;
 }
 
-.modal .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  cursor: pointer;
-}
 
 .close-btn {
   position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 24px;
+  top: 16px;
+  right: 16px;
+  font-size: 35px;
   cursor: pointer;
   border: none;
   background-color: transparent;
   color: black;
+  padding: 0;
+}
+.modal-info-head{
+  display: flex;
+  flex-direction: column;
+  gap:8px;
 }
 
 .modal-body {
@@ -62,7 +61,12 @@
   flex: 1 1 400px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
+}
+.modal-right p{
+  display: flex;
+  flex-direction: column;
+  gap:8px;
 }
 
 .modal-species {
@@ -80,6 +84,8 @@
   gap: 15px;
   font-size: 14px;
   color: #555;
+  font-weight: 500;
+
 }
 
 .modal-info span {
@@ -94,8 +100,8 @@
 }
 
 .modal-adopt-btn {
-  margin-top: 15px;
-  padding: 12px 20px;
+  width: 100%;
+  height: 53px;
   background-color: #8b7155;
   color: #fff;
   border: none;
@@ -106,10 +112,79 @@
   transition: background-color 0.3s;
 }
 
-.modal-adopt-btn:hover {
-  background-color: #7a6147;
+/* Hover / Focus */
+.modal-adopt-btn:hover,
+.modal-adopt-btn:focus {
+  background-color: #c1b39a;
+  color: #1f1f1f;
+}
+
+/* Active */
+.modal-adopt-btn:active {
+  background-color: #b3a48a;
+  color: #1f1f1f;
+}
+
+/* Disabled */
+.modal-adopt-btn:disabled {
+  background-color: #d9d3cb;
+  border-color: #bdb6ad;
+  color: #ffffff;
+  cursor: not-allowed;
 }
 
 .no-scroll {
   overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .modal {
+    max-width: 768px;
+    padding: 64px 32px;
+  }
+
+  .modal-body {
+    flex-direction: row;
+    flex-wrap: nowrap; /* ВАЖЛИВО */
+  }
+
+  .modal-left {
+    flex: 0 0 280px;
+  }
+
+  .modal-left img {
+    width: 280px;
+    height: 400px;
+  }
+
+  .modal-right {
+    flex: 1;
+  }
+  .modal-right p{
+    order: 1;
+  }
+  .modal-adopt-btn{
+    order: 0;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .info-modal {
+    max-width: 1320px;
+    padding: 64px;
+  }
+  .order-modal{
+    padding: 64px;
+  }
+    .modal-left img {
+    width: 576px;
+    height: 450px;
+  }
+  
+  .modal-left {
+    flex: 0 0 600px;
+  }
+   .modal-right p,.modal-adopt-btn
+    {
+    order: initial;
+  }
+  
 }

@@ -2,6 +2,7 @@ import axios from "axios";
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import { baseURL } from "./pets-list/pets-list-api";
+import { modal } from "./animal-detail";
 export const form = document.querySelector('.order-form')
 form.addEventListener('submit',async e=>{
     e.preventDefault();
@@ -27,6 +28,7 @@ form.addEventListener('submit',async e=>{
             icon: "success"
         });
         e.target.reset();
+        modal.classList.add('hidden');
     }catch(error){
         Swal.fire({
             title: "Ой ой?",
