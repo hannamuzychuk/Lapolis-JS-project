@@ -4,8 +4,6 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-// import '/src/about_us.css';
-
 
 const swiper = new Swiper('.about-swiper', {
   modules: [Navigation, Pagination],
@@ -13,24 +11,34 @@ const swiper = new Swiper('.about-swiper', {
   loop: false,
   spaceBetween: 0,
 
+  observer: true,
+  observeParents: true,
+
   navigation: {
     nextEl: '.next-btn',
     prevEl: '.prev-btn',
   },
 
   pagination: {
-    el: '.swiper-pagination',
     el: '.about-controls .swiper-pagination',
-    type: 'bullets', 
+    type: 'bullets',
     clickable: true,
-    dynamicBullets: true,
+    dynamicBullets: window.innerWidth < 768,
     dynamicMainBullets: 1,
   },
-  breakpoints: {
-    768: {  
-      pagination: {
-        dynamicBullets: false,
-      }
-    }
-  }
-}); 
+});
+
+function updatePaginationByWidth() {
+  const isMobile = window.innerWidth < 768;
+
+  swiper.params.pagination.dynamicBullets = isMobile;
+
+  swiper.pagination.destroy();
+  swiper.pagination.init();
+  swiper.pagination.render();
+  swiper.pagination.update();
+}
+
+window.addEventListener('resize', () => {
+  updatePaginationByWidth();
+});
