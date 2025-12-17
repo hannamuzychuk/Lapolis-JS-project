@@ -13,9 +13,9 @@
     />
 
     <script type="module" crossorigin src="/Lapolis-JS-project/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/Lapolis-JS-project/assets/vendor-CUVKyrIO.js">
-    <link rel="stylesheet" crossorigin href="/Lapolis-JS-project/assets/vendor-yLkEJ4gN.css">
-    <link rel="stylesheet" crossorigin href="/Lapolis-JS-project/assets/index-Bxqk3BG8.css">
+    <link rel="modulepreload" crossorigin href="/Lapolis-JS-project/assets/vendor-CYu79KlZ.js">
+    <link rel="stylesheet" crossorigin href="/Lapolis-JS-project/assets/vendor-BPWtGK0k.css">
+    <link rel="stylesheet" crossorigin href="/Lapolis-JS-project/assets/index-D40VYPom.css">
   </head>
   <body>
     <header class="header">
@@ -241,7 +241,76 @@
 
     </div>
 </section>
-      
+      <section class="success-stories" id="success-stories-section">
+  <div class="container success-stories__container" id="success-stories-container">
+    <h2 class="success-stories__title" id="success-stories-title">
+      Щасливі історії, що надихають
+    </h2>
+
+    <p class="success-stories__subtitle" id="success-stories-subtitle">
+      Ці хвостики вже знайшли свій дім. Ваш майбутній друг теж чекає на вас
+    </p>
+
+    <div class="success-stories__slider" id="success-stories-slider">
+      <div
+        class="swiper success-stories__swiper"
+        id="success-stories-swiper"
+        data-success-swiper
+      >
+        <div class="swiper-wrapper" id="success-stories-wrapper">
+          <!-- Slides render here from API (/feedbacks) -->
+        </div>
+      </div>
+
+      <div class="success-stories__controls" id="success-stories-controls">
+        <div
+          class="swiper-pagination success-stories__pagination"
+          id="success-stories-pagination"
+        ></div>
+
+        <div class="success-stories__nav" id="success-stories-navigation">
+          <button
+            class="success-stories__btn success-stories__btn--prev"
+            id="success-stories-button-prev"
+            type="button"
+            aria-label="Попередній відгук"
+            data-success-prev
+          >
+            <svg
+              class="success-stories__btn-icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="/Lapolis-JS-project/assets/icons-D8Flmos2.svg#icon-left"></use>
+            </svg>
+          </button>
+
+          <button
+            class="success-stories__btn success-stories__btn--next"
+            id="success-stories-button-next"
+            type="button"
+            aria-label="Наступний відгук"
+            data-success-next
+          >
+            <svg
+              class="success-stories__btn-icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="/Lapolis-JS-project/assets/icons-D8Flmos2.svg#icon-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
       
       <div class="modal-overlay hidden">
   <div class="info-modal modal hidden"></div>
