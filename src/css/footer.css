@@ -1,0 +1,182 @@
+.footer {
+    min-width: 320px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    background-color: #c3b49d;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-box-logo {
+    margin-bottom: 32px;
+}
+
+.footer-logo {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+    color: #332c22;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-logo-svg{
+    line-height: 1;
+    width: 98px;
+    height: 96px;
+    fill: currentColor;
+    transition: transform 0.3s;
+}
+
+.footer-logo-text {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+    color: #332c22;
+    transition: transform 0.3s;
+}
+
+.footer-logo:hover,
+.footer-logo:focus {
+    color: #88765c;
+  
+}
+.footer-logo:hover .footer-logo-text,
+.footer-logo:focus .footer-logo-text,
+.footer-logo:hover .footer-logo-svg,
+.footer-logo:focus .footer-logo-svg {
+    color:#88765c;
+    transform: scale(1.05);
+}
+
+.footer-nav {
+    margin-bottom: 32px;
+}
+
+.footer-nav-list{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+
+.footer-nav-link {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #02060a;
+    cursor: pointer;
+    transition: color 250ms ease, text-decoration 250ms ease;
+}
+
+.footer-nav-link:hover,
+.footer-nav-link:focus {
+    color: #443b2e;
+    text-decoration: underline;
+}
+
+.footer-nav-link:active {
+    color: #88765c;
+}
+
+.footer-nav-link:disabled {
+    text-decoration: underline;
+    color: #88765c;
+    opacity: 0.3;
+}
+
+.footer-social-list {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.footer-social-link{
+    color: #02060a;
+    cursor: pointer;
+    transition: color 250ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    color: #443b2e;
+    transform: scale(1.1);
+    outline: none;
+    
+}
+
+
+.footer-social-link:active {
+    color: #88765c;
+    transform: scale(1);
+}
+
+
+.footer-social-icon {
+    fill: currentColor;
+    transition: inherit;
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon,
+.social-link:active .social-icon{
+transform: scale(1.2);
+}
+ 
+
+.footer-copyright {
+    font-weight: 400;
+    position: relative;
+    padding-top: 32px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #02060a;
+    width: 100%;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.footer-copyright::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(2, 6, 10, 0.2);
+}
+
+@media only screen and (min-width: 768px){   
+    .footer-box-logo {
+        margin-bottom: 50px;
+        }
+
+    .footer-nav-list {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        justify-content: center;
+        align-items: center;
+        }
+
+    .footer-nav-link {
+        font-size: 14px;
+        }
+}
+
+@media only screen and (min-width: 1440px) {
+.footer {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+}
