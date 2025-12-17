@@ -29,12 +29,12 @@ const swiper = new Swiper('.about-swiper', {
 });
 function updatePaginationByWidth() {
 const isMobile = window.innerWidth < 768;
-// Лише змінюємо параметр, не робимо destroy/init
+
 swiper.params.pagination.dynamicBullets = isMobile;
-swiper.pagination.update(); // оновлюємо пагінацію
+swiper.pagination.update(); 
 }
 
 window.addEventListener('resize', updatePaginationByWidth);
 
-// Виклик при завантаженні сторінки
+
 updatePaginationByWidth();
