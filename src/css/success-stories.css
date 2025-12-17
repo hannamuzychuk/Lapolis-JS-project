@@ -52,7 +52,7 @@
 .story-card {
   display: flex;
   flex-direction: column;
-  min-height: 220px;
+  min-height: 50px;
   border-radius: 16px;
 }
 
@@ -113,6 +113,7 @@
   align-items: center;
   gap: 12px;
   margin-left: auto;
+  transform: translateX(0);
 }
 
 /* buttons */
@@ -265,9 +266,12 @@
   .success-stories__subtitle {
     margin-bottom: 48px;
   }
+  .success-stories__nav {
+    transform: translateX(-32px);
+  }
 
   .story-card {
-    padding: 28px;
+   
     min-height: 240px;
   }
 
@@ -277,7 +281,7 @@
   #success-stories-section
     .success-stories__controls
     .success-stories__pagination.swiper-pagination {
-    transform: translateX(32px);
+    transform: translateX(0px);
   }
 }
 
@@ -288,6 +292,9 @@
 
   .success-stories__title {
     font-size: 64px;
+  }
+  .success-stories__nav {
+    transform: translateX(-32px);
   }
 
   .success-stories__subtitle {
@@ -300,6 +307,6 @@
   #success-stories-section
     .success-stories__controls
     .success-stories__pagination.swiper-pagination {
-    transform: translateX(32px);
+    transform: translateX(0px);
   }
 }
