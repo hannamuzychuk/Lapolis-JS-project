@@ -1,3 +1,4 @@
+import { currentPage, totalPages } from './pet-list-handlers';
 import { refs } from './pets-list-refs';
 
 export function renderFilters(categories) {
@@ -73,9 +74,79 @@ export function renderAnimals(animals, append = false) {
   refs.animalsContainer.insertAdjacentHTML('beforeend', markup);
 }
 
+export function renderPagination() {
+  if (totalPages <= 1) {
+    refs.paginationList.innerHTML = '';
+    return;
+  }
+
+  let paginationMarkup = '';
+
+  paginationMarkup += `
+    <li>
+      <button class="arrow-button"
+        data-action="prev"
+        ${currentPage === 1 ? 'disabled' : ''}>
+        <svg width="19" height="13">
+        <use href="./img/icons.svg#icon-left"></use>
+      </svg>
+      </button>
+    </li>`;
+
+  if (currentPage === 1) {
+    for (let i = 1; i <= Math.min(3, totalPages); i++) {
+      paginationMarkup += pageBtnMarkup(i);
+    }
+
+    if (totalPages > 3) {
+      paginationMarkup += `<li class="empty-space">…</li>`;
+      paginationMarkup += pageBtnMarkup(totalPages);
+    }
+  } else {
+    paginationMarkup += pageBtnMarkup(1);
+
+    if (currentPage > 3) {
+      paginationMarkup += `<li class="empty-space">…</li>`;
+    }
+
+    for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+      if (i > 1 && i < totalPages) paginationMarkup += pageBtnMarkup(i);
+    }
+
+    if (currentPage < totalPages - 2)
+      paginationMarkup += `<li class="empty-space">…</li>`;
+
+    paginationMarkup += pageBtnMarkup(totalPages);
+  }
+
+  paginationMarkup += `
+    <li>
+      <button class="arrow-button"
+        data-action="next"
+        ${currentPage === totalPages ? 'disabled' : ''}>
+        <svg width="19" height="13">
+        <use href="./img/icons.svg#icon-right"></use>
+      </svg>
+      </button>
+    </li>`;
+
+  refs.paginationList.innerHTML = paginationMarkup;
+}
+
+function pageBtnMarkup(page) {
+  return `
+    <li>
+      <button class="page-button ${page === currentPage ? 'active' : ''}"
+        data-page="${page}">
+        ${page}
+      </button>
+    </li>`;
+}
+
 export function showLoader() {
   refs.loader.classList.remove('hidden');
 }
+
 export function hideLoader() {
   refs.loader.classList.add('hidden');
 }

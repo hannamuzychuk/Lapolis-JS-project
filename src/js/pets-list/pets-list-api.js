@@ -12,7 +12,6 @@ export async function fetchCategories() {
     iziToast.error({
       message: `Помилка при отриманні категорій  з сервера:' ${err}`,
     });
-    throw err;
   }
 }
 
@@ -26,6 +25,5 @@ export async function fetchAnimals(categoryId = null, page = 1, limit = 9) {
     iziToast.error({
       message: `Помилка при отриманні тварин з сервера: ${err}`,
     });
-    throw err;
   }
 }

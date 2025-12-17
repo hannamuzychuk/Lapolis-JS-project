@@ -2,12 +2,19 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { fetchAnimals } from './pets-list-api';
 import { refs } from './pets-list-refs';
-import { hideLoader, renderAnimals, showLoader } from './pets-list-render';
+import {
+  hideLoader,
+  renderAnimals,
+  renderPagination,
+  showLoader,
+} from './pets-list-render';
 
 export let currentAnimals = [];
 export let currentCategory = '';
-let currentPage = 1;
+export let currentPage = 1;
 let itemsPerPage = 9;
+let totalItems = 0;
+export let totalPages = 1;
 
 export async function handleFilterClick(e) {
   if (!e.target.classList.contains('filter-btn')) return;
@@ -20,6 +27,8 @@ export async function handleFilterClick(e) {
 
   currentPage = 1;
   refs.loadMoreBtn.style.display = 'block';
+
+  showLoader();
   try {
     await loadAnimals(false);
   } catch (err) {
@@ -53,24 +62,57 @@ export async function handleLoadMoreClick() {
   }
 }
 
-export async function loadAnimals(append = false) {
+export async function handlePaginationClick(e) {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+
+  if (btn.dataset.page) {
+    currentPage = Number(btn.dataset.page);
+  }
+
+  if (btn.dataset.action === 'prev' && currentPage > 1) {
+    currentPage -= 1;
+  }
+
+  if (btn.dataset.action === 'next' && currentPage < totalPages) {
+    currentPage += 1;
+  }
+
+  scrollToAnimalsTop();
+
+  showLoader();
   try {
-    const data = await fetchAnimals(currentCategory, currentPage, itemsPerPage);
-
-    if (!data.animals) {
-      return false;
-    }
-
-    const animals = data.animals;
-
-    loadAndRenderAnimals(animals, append);
-
-    return animals.length === itemsPerPage;
+    await loadAnimals(false);
   } catch (err) {
     iziToast.error({
       message: `Помилка завантаження тварин ${err}`,
     });
+  } finally {
+    hideLoader();
   }
+}
+
+export async function loadAnimals(append = false) {
+  const data = await fetchAnimals(currentCategory, currentPage, itemsPerPage);
+
+  if (!data.animals) {
+    return false;
+  }
+  totalItems = data.totalItems;
+  totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  const animals = data.animals;
+
+  loadAndRenderAnimals(animals, append);
+
+  if (isDesktop()) {
+    renderPagination({
+      currentPage,
+      totalPages,
+    });
+  }
+
+  return currentPage < totalPages;
 }
 
 export function loadAndRenderAnimals(animals, append = false) {
@@ -84,6 +126,30 @@ export function loadAndRenderAnimals(animals, append = false) {
 
 export function setItemsPerPage() {
   const width = window.innerWidth;
-  if (width >= 1024) itemsPerPage = 9;
-  else itemsPerPage = 8;
+  if (width >= 1440) {
+    itemsPerPage = 9;
+    refs.loadMoreBtn.classList.add('hidden');
+    refs.paginationList.classList.remove('hidden');
+  } else {
+    itemsPerPage = 8;
+    refs.loadMoreBtn.classList.remove('hidden');
+    refs.paginationList.classList.add('hidden');
+  }
+}
+
+function isDesktop() {
+  return window.innerWidth >= 1440;
+}
+
+function scrollToAnimalsTop() {
+  const offset = 110;
+  const top =
+    refs.animalsContainer.getBoundingClientRect().top +
+    window.pageYOffset -
+    offset;
+
+  window.scrollTo({
+    top,
+    behavior: 'smooth',
+  });
 }
