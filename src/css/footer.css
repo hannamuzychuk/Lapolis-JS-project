@@ -2,6 +2,7 @@
     min-width: 320px;
     padding-top: 48px;
     padding-bottom: 48px;
+    margin: auto;
     background-color: #c3b49d;
 }
 
@@ -156,7 +157,11 @@ transform: scale(1.2);
     background-color: rgba(2, 6, 10, 0.2);
 }
 
-@media only screen and (min-width: 768px){   
+@media only screen and (min-width: 768px){ 
+    .footer {
+        max-width: 768px;
+    }
+    
     .footer-box-logo {
         margin-bottom: 50px;
         }
@@ -178,5 +183,6 @@ transform: scale(1.2);
 .footer {
         padding-top: 64px;
         padding-bottom: 64px;
+        max-width: 1440px;
     }
 }
