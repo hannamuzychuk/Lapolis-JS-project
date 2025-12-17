@@ -186,8 +186,8 @@ function initSwiper(sectionEl) {
     pagination: {
       el: sectionEl.querySelector(SELECTORS.pagination),
       clickable: true,
-      dynamicBullets: true,
-      dynamicMainBullets: 1,
+      dynamicBullets: false,
+      
     },
 
     breakpoints: {

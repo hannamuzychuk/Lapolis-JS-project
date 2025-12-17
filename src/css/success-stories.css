@@ -17,6 +17,7 @@
   line-height: 1.05;
   letter-spacing: -0.01em;
   color: #02060a;
+  margin-bottom: 24px;
 }
 
 .success-stories__subtitle {
@@ -25,9 +26,9 @@
   text-align: center;
 
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
-  color: rgba(12, 13, 13, 0.7);
+  color: var(--color-scheme-1-text);
 }
 
 /* Slider wrapper */
@@ -51,16 +52,12 @@
 .story-card {
   display: flex;
   flex-direction: column;
-
-  padding: 32px;
   min-height: 220px;
-
   border-radius: 16px;
-  background: #ffffff;
 }
 
 .story-card__rating {
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .story-card__rating .rating-js {
@@ -81,9 +78,10 @@
   margin: 0 0 24px;
 
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
-  color: #02060a;
+  color: var(--color-scheme-1-text);
+  margin-bottom: 32px;
 }
 
 /* автор */
