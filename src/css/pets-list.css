@@ -1,0 +1,368 @@
+/* Styles for mobile */
+
+.pets-list {
+  padding: 64px 0 32px 0;
+}
+
+.pets-list-ttl {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -0.01em;
+}
+
+.pets-list-txt {
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+
+.pets-list-categories {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-btn {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #02060a;
+  background-color: transparent;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 16px;
+  transition: color 0.25s ease, background-color 0.25s ease,
+    border-color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn:hover:not(.active) {
+  background-color: rgba(195, 180, 157, 0.15);
+  border-color: #c3b49d;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.active {
+  background-color: #eee9e3;
+  font-weight: 500;
+}
+
+.pets-list-animals {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.animal-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee9e3;
+  border-radius: 16px;
+  padding: 12px;
+  width: 100%;
+}
+
+.animal-img {
+  border-radius: 8px;
+  width: 311px;
+  height: 245px;
+  object-fit: cover;
+}
+
+.animal-card-content {
+  margin-top: 16px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.animal-card-species {
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.animal-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+}
+
+.animal-card-name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.animal-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.animal-card-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  height: 60px;
+}
+.animal-card-category {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 1.5;
+  border-radius: 100px;
+  padding: 4px 10px;
+  background-color: #02060a0d;
+  height: 23px;
+}
+
+.animal-card-info {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.more-btn {
+  width: 100%;
+  padding: 8px 20px;
+  margin-top: auto;
+  border: 1px solid #02060a;
+  color: #02060a;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: transparent;
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+.more-btn:hover {
+  background-color: #c3b49d;
+}
+.more-btn:focus {
+  background-color: #c3b49d;
+}
+.more-btn:active {
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  background-color: #c3b49d;
+}
+
+.animal-card-short-description {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.pets-list-load-more-btn {
+  display: block;
+  margin: 40px auto 0;
+  width: 100%;
+  padding: 12px 24px;
+  border: 1px solid #88765c;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.pets-list-load-more-btn:hover {
+  color: #02060a;
+  border: 1px solid #88765c;
+  background-color: #eee9e3;
+}
+.pets-list-load-more-btn:focus {
+  color: #02060a;
+  border: 1px solid #88765c;
+  background-color: #eee9e3;
+}
+.pets-list-load-more-btn:active {
+  color: #02060a;
+  border: 1px solid #88765c;
+  background-color: #eee9e3;
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+}
+
+/* Styles for tablet  */
+
+@media only screen and (min-width: 768px) {
+  .pets-list-categories {
+    padding: 0 62px;
+  }
+
+  .pets-list-animals {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .animal-card {
+    width: calc((100% - 32px) / 2);
+  }
+
+  .pets-list-load-more-btn {
+    width: 335px;
+  }
+}
+
+/* Styles for desctop */
+
+@media only screen and (min-width: 1440px) {
+  .pets-list {
+    padding: 80px 0 32px 0;
+  }
+  .pets-list-ttl {
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: -0.01em;
+  }
+  .pets-list-txt {
+    font-size: 18px;
+  }
+  .pets-list-categories {
+    margin-top: 40px;
+  }
+  .filter-btn {
+    font-size: 16px;
+  }
+  .pets-list-animals {
+    margin-top: 40px;
+  }
+  .animal-card {
+    width: calc((100% - 32px * 2) / 3);
+  }
+  .animal-img {
+    border-radius: 8px;
+    width: 392px;
+    height: 309px;
+    object-fit: cover;
+  }
+  .animal-card-species {
+    font-size: 12px;
+  }
+  .animal-card-name {
+    font-size: 24px;
+  }
+  .animal-card-category {
+    font-size: 12px;
+    height: 26px;
+  }
+
+  .animal-card-info {
+    font-size: 12px;
+  }
+  .animal-card-short-description {
+    font-size: 14px;
+  }
+  .more-btn {
+    font-size: 16px;
+  }
+  .pets-list-load-more-btn {
+    width: 192px;
+    font-size: 16px;
+  }
+
+  .pagination-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 40px;
+  }
+
+  .page-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+    background-color: transparent;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.25s ease, background-color 0.25s ease,
+      box-shadow 0.25s ease, color 0.25s ease;
+    color: #02060a;
+  }
+
+  .page-button:hover:not(.active) {
+    transform: scale(1.08);
+    border-color: #c3b49d;
+    background-color: #eee9e3;
+  }
+
+  .page-button:active:not(.active) {
+    transform: scale(1.03);
+    box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+      inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  }
+
+  .arrow-button {
+    border: 1px solid #c3b49d;
+    border-radius: 8px;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    background-color: #eee9e3;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .arrow-button:disabled {
+    border: 1px solid #f6f4f1;
+    border-radius: 8px;
+    background-color: #eee9e3;
+    opacity: 0.4;
+  }
+  .arrow-button:hover:not(:disabled),
+  .arrow-button:focus:not(:disabled) {
+    border: 1px solid rgba(2, 6, 10, 0.6);
+    transform: scale(1.12);
+    border-color: #8b7a5c;
+  }
+  .page-button {
+    border-color: transparent;
+  }
+
+  .arrow-button svg {
+    stroke: #02060a;
+    width: 16px;
+    height: 16px;
+    transition: transform 0.25s ease;
+  }
+
+  .arrow-button:hover:not(:disabled) svg {
+    transform: scale(1.1);
+  }
+
+  .arrow-button:active:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+      inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  }
+
+  .page-button.active {
+    border-color: rgb(179, 180, 181);
+  }
+
+  .empty-space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 48px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #02060a;
+  }
+}
