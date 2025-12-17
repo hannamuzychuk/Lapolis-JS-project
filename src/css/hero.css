@@ -1,4 +1,5 @@
 .hero {
+  min-width: 320px;
   min-height: 100vh;
   background-image: image-set(
     url('../img/hero/hero-mobile.jpg') 1x,
@@ -77,6 +78,7 @@
 .hero-button:hover,
 .hero-button:focus,
 .hero-button:active {
+  border: 1px solid #88765c;
   color: #02060a;
   background-color: #eee9e3;
 }
