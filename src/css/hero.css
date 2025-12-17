@@ -138,6 +138,7 @@
 
   .hero-title {
     font-size: 56px;
+    min-width: 622px;
   }
 
   .hero-text {
