@@ -27,18 +27,14 @@ const swiper = new Swiper('.about-swiper', {
     dynamicMainBullets: 1,
   },
 });
-
 function updatePaginationByWidth() {
-  const isMobile = window.innerWidth < 768;
-
-  swiper.params.pagination.dynamicBullets = isMobile;
-
-  swiper.pagination.destroy();
-  swiper.pagination.init();
-  swiper.pagination.render();
-  swiper.pagination.update();
+const isMobile = window.innerWidth < 768;
+// Лише змінюємо параметр, не робимо destroy/init
+swiper.params.pagination.dynamicBullets = isMobile;
+swiper.pagination.update(); // оновлюємо пагінацію
 }
 
-window.addEventListener('resize', () => {
-  updatePaginationByWidth();
-});
+window.addEventListener('resize', updatePaginationByWidth);
+
+// Виклик при завантаженні сторінки
+updatePaginationByWidth();
