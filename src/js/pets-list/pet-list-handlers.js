@@ -28,6 +28,12 @@ export async function handleFilterClick(e) {
   currentPage = 1;
   refs.loadMoreBtn.style.display = 'block';
 
+  if (!isDesktop()) {
+    refs.loadMoreBtn.style.display = 'block';
+  } else {
+    refs.loadMoreBtn.style.display = 'none';
+  }
+
   showLoader();
   try {
     await loadAnimals(false);
@@ -41,6 +47,7 @@ export async function handleFilterClick(e) {
 }
 
 export async function handleLoadMoreClick() {
+  if (isDesktop()) return;
   refs.loadMoreBtn.style.display = 'none';
   showLoader();
   try {
@@ -110,6 +117,7 @@ export async function loadAnimals(append = false) {
       currentPage,
       totalPages,
     });
+    return false;
   }
 
   return currentPage < totalPages;

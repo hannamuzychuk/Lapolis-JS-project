@@ -109,6 +109,7 @@ form.addEventListener('submit', async e => {
 
     form.reset();
     modal.classList.add('hidden');
+    document.body.classList.remove('no-scroll');
   } catch (error) {
     Swal.fire({
       title: 'Ой ой',
