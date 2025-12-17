@@ -1,2 +1,77 @@
-import{A as l}from"./assets/vendor-D8TX2iKf.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))c(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const n of e.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&c(n)}).observe(document,{childList:!0,subtree:!0});function r(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?e.credentials="include":t.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function c(t){if(t.ep)return;t.ep=!0;const e=r(t);fetch(t.href,e)}})();window.addEventListener("scroll",()=>{const o=document.querySelector(".header");window.scrollY>30?o.classList.add("scrolled"):o.classList.remove("scrolled")});(()=>{const o={openModalBtn:document.querySelector("[data-menu-open]"),closeModalBtn:document.querySelector("[data-menu-close]"),modal:document.querySelector("[data-menu]"),menuLinks:document.querySelectorAll("[data-scroll-to]")};o.openModalBtn.addEventListener("click",s),o.closeModalBtn.addEventListener("click",r),o.menuLinks.forEach(e=>{e.addEventListener("click",t)});function s(){o.modal.classList.toggle("is-open")}function r(){o.modal.classList.remove("is-open")}function c(e){const n=document.getElementById(e);n&&n.scrollIntoView({behavior:"smooth",block:"start"})}function t(e){e.preventDefault();const n=e.currentTarget.dataset.scrollTo;r(),setTimeout(()=>{c(n)},300)}o.modal.addEventListener("click",e=>{e.target===o.modal&&r()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&o.modal.classList.contains("is-open")&&r()})})();document.addEventListener("DOMContentLoaded",()=>{new l(".faq-container",{duration:300,collapse:!0,showMultiple:!1})});
+import{a as w,i as u,S as k,A as O}from"./assets/vendor-CUVKyrIO.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))n(o);new MutationObserver(o=>{for(const s of o)if(s.type==="childList")for(const d of s.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&n(d)}).observe(document,{childList:!0,subtree:!0});function a(o){const s={};return o.integrity&&(s.integrity=o.integrity),o.referrerPolicy&&(s.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?s.credentials="include":o.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function n(o){if(o.ep)return;o.ep=!0;const s=a(o);fetch(o.href,s)}})();window.addEventListener("scroll",()=>{const e=document.querySelector(".header");window.scrollY>30?e.classList.add("scrolled"):e.classList.remove("scrolled")});(()=>{const e={openModalBtn:document.querySelector("[data-menu-open]"),closeModalBtn:document.querySelector("[data-menu-close]"),modal:document.querySelector("[data-menu]"),menuLinks:document.querySelectorAll("[data-scroll-to]")};e.openModalBtn.addEventListener("click",t),e.closeModalBtn.addEventListener("click",a),e.menuLinks.forEach(s=>{s.addEventListener("click",o)});function t(){e.modal.classList.toggle("is-open")}function a(){e.modal.classList.remove("is-open")}function n(s){const d=document.getElementById(s);d&&d.scrollIntoView({behavior:"smooth",block:"start"})}function o(s){s.preventDefault();const d=s.currentTarget.dataset.scrollTo;a(),setTimeout(()=>{n(d)},300)}e.modal.addEventListener("click",s=>{s.target===e.modal&&a()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&e.modal.classList.contains("is-open")&&a()})})();const $="https://paw-hut.b.goit.study/api";async function x(){try{return(await w.get(`${$}/categories`)).data}catch(e){u.error({message:`Помилка при отриманні категорій  з сервера:' ${e}`})}}async function I(e=null,t=1,a=9){try{const n={page:t,limit:a};return e&&(n.categoryId=e),(await w.get(`${$}/animals`,{params:n})).data}catch(n){u.error({message:`Помилка при отриманні тварин з сервера: ${n}`})}}const i={filtersContainer:document.querySelector(".pets-list-categories"),animalsContainer:document.querySelector(".pets-list-animals"),loadMoreBtn:document.querySelector(".pets-list-load-more-btn"),loader:document.querySelector(".pet-list-loader.loader"),paginationList:document.querySelector(".pagination-list")};function D(e){const t=["","Собаки","Коти","Кролики","Гризуни","Птахи","Тварини з особливими потребами","Терміново шукають дім"];e.sort((a,n)=>{const o=t.indexOf(a.name),s=t.indexOf(n.name);return o-s}),i.filtersContainer.innerHTML=`
+    <li class="filter-item"><button class="filter-btn active" data-id="">Всі</button></li>
+    ${e.map(a=>`<li class="filter-item"><button class="filter-btn" data-id="${a._id}">${a.name}</button></li>`).join("")}
+      
+  `}function H(e,t=!1){t||(i.animalsContainer.innerHTML="");const a=e.map(n=>{const o=n.categories.map(s=>`<li class="animal-card-category">${s.name}</li>`).join("");return`
+    <li class="animal-card">
+        <img src="${n.image}" alt="${n.name}" class="animal-img" />
+        
+          <div class="animal-card-content">
+          <div class="animal-card-wrapper">
+            <div class="animal-card-details">
+              <span class="animal-card-species">${n.species} </span>
+              <h3 class="animal-card-name">${n.name}</h3>
+              <ul class="animal-card-categories">
+                ${o}
+              </ul>
+              <div class="animal-card-info">
+                <span>${n.age}</span>
+                <span>${n.gender}</span>
+              </div>
+            </div>
+            <p class="animal-card-short-description">
+              ${n.shortDescription}
+            </p>
+        </div>
+          <button class="more-btn" data-id="${n._id}">
+            Дізнатись більше
+          </button>
+        </div>
+      </li>
+  `}).join("");i.animalsContainer.insertAdjacentHTML("beforeend",a)}function N(){if(l<=1){i.paginationList.innerHTML="";return}let e="";if(e+=`
+    <li>
+      <button class="arrow-button"
+        data-action="prev"
+        ${r===1?"disabled":""}>
+        <svg width="19" height="13">
+        <use href="./img/icons.svg#icon-left"></use>
+      </svg>
+      </button>
+    </li>`,r===1){for(let t=1;t<=Math.min(3,l);t++)e+=f(t);l>3&&(e+='<li class="empty-space">…</li>',e+=f(l))}else{e+=f(1),r>3&&(e+='<li class="empty-space">…</li>');for(let t=r-1;t<=r+1;t++)t>1&&t<l&&(e+=f(t));r<l-2&&(e+='<li class="empty-space">…</li>'),e+=f(l)}e+=`
+    <li>
+      <button class="arrow-button"
+        data-action="next"
+        ${r===l?"disabled":""}>
+        <svg width="19" height="13">
+        <use href="./img/icons.svg#icon-right"></use>
+      </svg>
+      </button>
+    </li>`,i.paginationList.innerHTML=e}function f(e){return`
+    <li>
+      <button class="page-button ${e===r?"active":""}"
+        data-page="${e}">
+        ${e}
+      </button>
+    </li>`}function v(){i.loader.classList.remove("hidden")}function y(){i.loader.classList.add("hidden")}let p=[],B="",r=1,g=9,S=0,l=1;async function j(e){if(!e.target.classList.contains("filter-btn"))return;i.filtersContainer.querySelectorAll(".filter-btn").forEach(a=>a.classList.remove("active")),e.target.classList.add("active"),B=e.target.dataset.id,r=1,i.loadMoreBtn.style.display="block",v();try{await L(!1)}catch(a){u.error({message:`Помилка завантаження тварин ${a}`})}finally{y()}}async function z(){i.loadMoreBtn.style.display="none",v();try{r+=1,await L(!0)?i.loadMoreBtn.style.display="block":i.loadMoreBtn.style.display="none"}catch(e){u.error({message:`Помилка завантаження тварин ${e}`}),i.loadMoreBtn.style.display="block"}finally{y()}}async function R(e){const t=e.target.closest("button");if(t){t.dataset.page&&(r=Number(t.dataset.page)),t.dataset.action==="prev"&&r>1&&(r-=1),t.dataset.action==="next"&&r<l&&(r+=1),_(),v();try{await L(!1)}catch(a){u.error({message:`Помилка завантаження тварин ${a}`})}finally{y()}}}async function L(e=!1){const t=await I(B,r,g);if(!t.animals)return!1;S=t.totalItems,l=Math.ceil(S/g);const a=t.animals;return F(a,e),V()&&N(),r<l}function F(e,t=!1){t?p=p.concat(e):p=e,H(e,t)}function q(){window.innerWidth>=1440?(g=9,i.loadMoreBtn.classList.add("hidden"),i.paginationList.classList.remove("hidden")):(g=8,i.loadMoreBtn.classList.remove("hidden"),i.paginationList.classList.add("hidden"))}function V(){return window.innerWidth>=1440}function _(){const t=i.animalsContainer.getBoundingClientRect().top+window.pageYOffset-110;window.scrollTo({top:t,behavior:"smooth"})}const c=document.querySelector(".order-form"),h=(e,t)=>{const a=c.querySelector(`[data-error-for="${e.name}"]`);a&&(a.textContent=t,a.style.display="block",e.classList.add("is-error"),e.classList.remove("is-valid"))},M=e=>{const t=c.querySelector(`[data-error-for="${e.name}"]`);t&&(t.textContent="",t.style.display="none",e.classList.remove("is-error"),e.classList.add("is-valid"))},A=e=>{const t=/^[A-Za-zА-Яа-яІіЇїЄєҐґ\s]+$/,a=e.value.trim();return a.length<2?(h(e,"Імʼя повинно містити мінімум 2 літери"),!1):t.test(a)?(M(e),!0):(h(e,"Імʼя може містити тільки букви"),!1)},P=e=>e.value.replace(/\D/g,"").length!==12?(h(e,"Номер телефону повинен містити 12 цифр"),!1):(M(e),!0),T=e=>e.value.length>500?(h(e,"Коментар не може перевищувати 500 символів"),!1):(M(e),!0);c.name.addEventListener("input",()=>{A(c.name)});c.phone.addEventListener("input",()=>{P(c.phone)});c.comment.addEventListener("input",()=>{T(c.comment)});c.addEventListener("submit",async e=>{e.preventDefault();const t=e.target.dataset.animalId,{name:a,phone:n,comment:o}=e.target.elements;if(!(A(a)&P(n)&T(o)))return;const d=n.value.replace(/\D/g,""),E={name:a.value.trim(),phone:d,animalId:t};o.value.trim()&&(E.comment=o.value.trim());try{await w.post(`${$}/orders`,E),k.fire({title:"Хороша робота!",text:"Заявка відправлена!",icon:"success"}),c.reset(),m.classList.add("hidden")}catch{k.fire({title:"Ой ой",text:"Якась помилка — спробуй ще",icon:"error"})}});const m=document.querySelector(".modal-overlay"),b=m.querySelector(".info-modal"),C=m.querySelector(".order-modal");function W(e,t){e.classList.add("hidden"),t.classList.remove("hidden"),document.body.classList.add("no-scroll")}function Y(){document.addEventListener("click",e=>{if(e.target.classList.contains("more-btn")){const t=e.target.dataset.id,a=p.find(n=>n._id===t);if(!a)return;c.dataset.animalId=t,b.innerHTML=`
+        <button class="close-btn">&times;</button>
+        <div class="modal-body">
+      <div class="modal-left">
+        <img class="modal-animal-img" src="${a.image}" alt="${a.name}"  />
+      </div>
+      <div class="modal-right">
+      <div class="modal-info-head">
+        <span class="modal-species">${a.species}</span>
+        <h2 class="modal-name">${a.name}</h2>
+        <div class="modal-info">
+          <span class="modal-age">${a.age}</span>
+          <span class="modal-gender">${a.gender}</span>
+        </div>
+      </div>
+        
+        <p><strong>Опис:</strong> <span class="modal-description">${a.description}</span></p>
+        <p><strong>Здоров'я:</strong> <span class="modal-health">${a.healthStatus}</span></p>
+        <p><strong>Поведінка:</strong> <span class="modal-behavior">${a.behavior}</span></p>
+        <button class="modal-adopt-btn">Взяти додому</button>
+      </div>
+    </div>`,m.classList.remove("hidden"),b.classList.remove("hidden"),C.classList.add("hidden"),document.body.classList.add("no-scroll")}if((e.target.classList.contains("close-btn")||e.target.classList.contains("modal-overlay"))&&(m.classList.add("hidden"),document.body.classList.remove("no-scroll")),e.target.closest(".modal-adopt-btn")){W(b,C);return}document.addEventListener("keydown",t=>{t.key==="Escape"&&(m.classList.add("hidden"),document.body.classList.remove("no-scroll"))})})}async function K(){try{q(),window.addEventListener("resize",()=>{q()}),v();const e=await x();D(e),i.filtersContainer.addEventListener("click",j),i.loadMoreBtn.addEventListener("click",z),await L()}catch(e){u.error({message:`Помилка завантаження тварин: ${e}`})}finally{y()}}i.paginationList.addEventListener("click",R);Y();K();document.addEventListener("DOMContentLoaded",()=>{new O(".faq-container",{duration:300,collapse:!0,showMultiple:!1})});
 //# sourceMappingURL=index.js.map
