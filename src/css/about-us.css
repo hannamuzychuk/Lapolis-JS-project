@@ -1,0 +1,346 @@
+ /* скдання актів кнопки */
+ .swiper-btn{
+  appearance: none;}
+  
+  #about-us {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .about-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 120%;
+  text-align: center;
+  margin-bottom: 40px;
+  
+}
+
+/* свайпер */
+.about-swiper {
+  position: relative;
+    height: 402px;
+  margin-bottom: 24px;
+   width: 100%;
+  overflow: hidden;
+  
+}
+/* Ckfql
+*/
+.about-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 24px;
+}
+/* зображення */
+.about-img {
+  width: 335px;
+  height: 402px;
+  object-fit: cover;
+  
+}
+/* текст */
+.about-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #F6F4F1;
+  /* padding: 8px; */
+  
+}
+
+/* пагінація і кнопки */
+
+.about-controls {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  flex-direction: row;
+  align-items: center;          
+  justify-content: space-between;      
+  gap: 16px;
+  padding-right: 8px;                
+ 
+}
+
+/* зкидання абсолютної позиції */
+.about-controls .swiper-pagination {
+  position: static;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* буллет крапки */
+#about-swiper-pagination {
+  transform: none;
+}
+/* буллети */
+.about-controls .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  opacity: 0.6;
+  background: #02060A;           
+  transition: transform .2s, opacity .2s;
+}
+.about-controls .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* кнопки навігації в ліво в право слайд */
+.about-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+ #about-swip-button{
+  border: 2px solid;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-color: #C3B49D;
+  background: #EEE9E3;
+  cursor: pointer;
+}
+.swiper-btn:disabled { opacity: .5; cursor: default; }
+/* #about-swip-left:disabled,
+#about-swip-right:disabled{
+  fill: #02060A;
+  background-color: #E6E1DB;
+  background-color: #F6F4F1;
+} */
+
+
+
+ #about-swip-left{  
+  width: 48px;
+  height: 48px;
+  border: 1px solid #C3B49D;
+  border-radius: 8px;
+  background: #EEE9E3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 12px;
+}
+
+#about-left-svg{
+  width: 24px;
+  height: 24px;
+}
+#about-swip-right{
+  width: 48px;
+  height: 48px;
+  border: 1px solid #C3B49D;
+  border-radius: 8px;
+  background: #EEE9E3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 12px;
+}
+#about-right-svg{
+  width: 24px;
+  height: 24px;
+}
+#about-swip-left:active,
+#about-swip-right:active {
+ background-color: #EEE9E3;
+ box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03), inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+}
+
+/* ховер фокус булетів */
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover,
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active):focus {
+  background-color: rgba(2, 6, 10, 0.8); 
+  opacity: 0.9;                          
+  transform: scale(1.2);                  
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  #about-us {
+    align-items: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .about-us .container {
+  align-items: center;
+  
+}
+.about-title {
+text-align: center;
+}
+
+.about-swiper {
+ height: 404px;
+ align-items: center;
+}
+
+.about-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 24px;
+}
+
+.about-img {
+  width: 704px;
+  height: auto;
+  object-fit: cover;
+  
+}
+.about-text {
+   bottom: 32px;
+   left: 32px;
+  right: 124px;
+}
+.about-controls {
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 28px;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center;        
+      
+  gap: 16px;
+  padding-right: 8px;                
+}
+.about-nav{
+  position: absolute;
+  gap: 664px;
+  top: -252px ;
+  z-index: 10;
+  justify-content: center;
+  }
+
+  /* #about-swip-left:hover,
+  #about-swip-right:hover,
+  #about-swip-left:focus,
+  #about-swip-right:focus {
+    background-color: #C3B49D;
+    border-color: #02060A;
+  } */
+
+#about-swip-left:not(.swiper-button-disabled):hover,
+#about-swip-right:not(.swiper-button-disabled):hover,
+#about-swip-left:not(.swiper-button-disabled):focus,
+#about-swip-right:not(.swiper-button-disabled):focus {
+  background-color: #EEE9E3;
+  border-color:rgba(2, 6, 10, 0.6);
+}
+}
+
+.swiper-button-disabled {
+  cursor: default;        
+  pointer-events: none;   
+}
+
+ @media screen and (min-width: 1440px) {
+   #about-us {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  
+  .about-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 48px; 
+    line-height: 120%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  /* Свайпер */
+  .about-swiper {
+    width: 1312px;
+    height: 753px;
+    position: relative;
+  }
+
+  /* Слайди */
+  .about-slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  /* Зображення */
+  .about-img {
+    width: 1312px;
+    height: 753px;
+    object-fit: cover;
+  }
+
+  /* Текст на зображенні */
+  .about-text {
+    position: absolute;
+    bottom: 64px;
+    left: 64px;
+    width: 548px;
+    height: 108px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    
+  }
+
+  /* Булети */
+  /* ч' */
+
+.about-controls .swiper-pagination {
+position: static;
+flex: 1 1 100%;
+text-align: center;
+margin: 0;
+}
+
+  /* .about-controls {
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 28px;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center;        
+      
+  gap: 16px;
+  padding-right: 8px;                
+} */
+ .about-controls {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 16px;
+padding-right: 8px;
+height: 64px;
+}
+.about-nav{
+  position: absolute;
+  gap: 1272px;
+  top: -432px ;
+  z-index: 10;
+  justify-content: center;
+  }
+
+
+  #about-swip-left:not(.swiper-button-disabled):hover,
+#about-swip-right:not(.swiper-button-disabled):hover,
+#about-swip-left:not(.swiper-button-disabled):focus,
+#about-swip-right:not(.swiper-button-disabled):focus {
+  background-color: #EEE9E3;
+  border-color:rgba(2, 6, 10, 0.6);
+}
+ }
+
+
+
+  
