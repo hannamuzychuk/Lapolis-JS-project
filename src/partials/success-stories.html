@@ -1,39 +1,61 @@
-<section class="success-stories" id="success-stories">
-  <div class="container success-stories__container">
-    <h2 class="success-stories__title">Щасливі історії, що надихають</h2>
-    <p class="success-stories__subtitle">
+<section class="success-stories" id="ss-section">
+  <div class="container success-stories__container" id="ss-container">
+    <h2 class="success-stories__title" id="ss-title">
+      Щасливі історії, що надихають
+    </h2>
+
+    <p class="success-stories__subtitle" id="ss-subtitle">
       Ці хвостики вже знайшли свій дім. Ваш майбутній друг теж чекає на вас
     </p>
 
-    <div class="success-stories__slider">
-      <div class="swiper success-stories__swiper" data-success-swiper>
-        <div class="swiper-wrapper">
+    <div class="success-stories__slider" id="ss-slider">
+      <div
+        class="swiper success-stories__swiper"
+        id="ss-swiper"
+        data-success-swiper
+      >
+        <div class="swiper-wrapper" id="ss-wrapper">
           <!-- Slides render here from API (/feedbacks) -->
         </div>
       </div>
 
-      <div class="success-stories__controls">
-        <div class="swiper-pagination success-stories__pagination"></div>
+      <div class="success-stories__controls" id="ss-controls">
+        <div
+          class="swiper-pagination success-stories__pagination"
+          id="ss-pagination"
+        ></div>
 
-        <div class="success-stories__nav">
+        <div class="success-stories__nav" id="ss-nav">
           <button
             class="success-stories__btn success-stories__btn--prev"
+            id="ss-btn-prev"
             type="button"
             aria-label="Попередній відгук"
             data-success-prev
           >
-            <svg class="success-stories__btn-icon" width="24" height="24" aria-hidden="true">
+            <svg
+              class="success-stories__btn-icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
               <use href="./img/icons.svg#icon-left"></use>
             </svg>
           </button>
 
           <button
             class="success-stories__btn success-stories__btn--next"
+            id="ss-btn-next"
             type="button"
             aria-label="Наступний відгук"
             data-success-next
           >
-            <svg class="success-stories__btn-icon" width="24" height="24" aria-hidden="true">
+            <svg
+              class="success-stories__btn-icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
               <use href="./img/icons.svg#icon-right"></use>
             </svg>
           </button>
@@ -42,4 +64,5 @@
     </div>
   </div>
 </section>
+
 

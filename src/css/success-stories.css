@@ -166,10 +166,10 @@
 
 /* Swiper sets pagination styles; override locally to match layout */
 
-.success-stories__controls .success-stories__pagination.swiper-pagination {
-  position: static !important;
-  width: auto !important;
-  display: flex !important;
+#ss-section .success-stories__controls .success-stories__pagination.swiper-pagination {
+  position: static;
+  width: auto;
+  display: flex;
 
   align-items: center;
   justify-content: flex-start;
@@ -178,12 +178,13 @@
   padding: 0;
   margin: 0;
   flex-shrink: 0;
-
-  overflow: visible !important;
+  overflow: visible;
 }
 
+
 /* bullets */
-.success-stories__controls
+#ss-section
+  .success-stories__controls
   .success-stories__pagination.swiper-pagination
   .swiper-pagination-bullet {
   width: 8px;
@@ -193,28 +194,34 @@
   opacity: 1;
   background: rgba(12, 13, 13, 0.2);
 
-  margin: 0 !important;
+  margin: 0;
   transition: transform 200ms ease, background 200ms ease;
 }
 
+
 /* active bullet */
-.success-stories__controls
+#ss-section
+  .success-stories__controls
   .success-stories__pagination.swiper-pagination
   .swiper-pagination-bullet-active,
-.success-stories__controls
+#ss-section
+  .success-stories__controls
   .success-stories__pagination.swiper-pagination
   .swiper-pagination-bullet-active-main,
-.success-stories__controls
+#ss-section
+  .success-stories__controls
   .success-stories__pagination.swiper-pagination
   .swiper-pagination-bullet-active-prev,
-.success-stories__controls
+#ss-section
+  .success-stories__controls
   .success-stories__pagination.swiper-pagination
   .swiper-pagination-bullet-active-next {
-    width: 8px;
+  width: 8px;
   height: 8px;
   background: #0c0d0d;
   transform: scale(1.2);
 }
+
 
 /* =========================
    Loader / Error (optional)
