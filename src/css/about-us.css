@@ -1,6 +1,11 @@
  /* скдання актів кнопки */
  .swiper-btn{
   appearance: none;}
+  
+  #about-us {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 
   .about-title {
   font-weight: 700;
@@ -8,7 +13,7 @@
   line-height: 120%;
   text-align: center;
   margin-bottom: 40px;
-  margin-top: 64px;
+  
 }
 
 /* свайпер */
@@ -161,6 +166,8 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   #about-us {
     align-items: center;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
   .about-us .container {
   align-items: center;
@@ -168,7 +175,6 @@
 }
 .about-title {
 text-align: center;
-margin-top: 80px;
 }
 
 .about-swiper {
@@ -237,6 +243,10 @@ margin-top: 80px;
 }
 
  @media screen and (min-width: 1440px) {
+   #about-us {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
   
   .about-title {
     font-family: 'Open Sans', sans-serif;
@@ -245,7 +255,6 @@ margin-top: 80px;
     font-size: 48px; 
     line-height: 120%;
     text-align: center;
-    margin-top: 80px;
     margin-bottom: 40px;
   }
 

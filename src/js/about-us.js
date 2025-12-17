@@ -28,25 +28,25 @@ const swiper = new Swiper('.about-swiper', {
   },
 });
 
-// function updatePaginationByWidth() {
-//   const isMobile = window.innerWidth < 768;
-
-//   swiper.params.pagination.dynamicBullets = isMobile;
-
-//   swiper.pagination.destroy();
-//   swiper.pagination.init();
-//   swiper.pagination.render();
-//   swiper.pagination.update();
-// }
-
-// window.addEventListener('resize', () => {
-//   updatePaginationByWidth();
-// });
 function updatePaginationByWidth() {
-const isMobile = window.innerWidth < 768;
-swiper.params.pagination.dynamicBullets = isMobile;
-swiper.pagination.update(); 
-}
-window.addEventListener('resize', updatePaginationByWidth);
+  const isMobile = window.innerWidth < 768;
 
-updatePaginationByWidth();
+  swiper.params.pagination.dynamicBullets = isMobile;
+
+  swiper.pagination.destroy();
+  swiper.pagination.init();
+  swiper.pagination.render();
+  swiper.pagination.update();
+}
+
+window.addEventListener('resize', () => {
+  updatePaginationByWidth();
+});
+// function updatePaginationByWidth() {
+// const isMobile = window.innerWidth < 768;
+// swiper.params.pagination.dynamicBullets = isMobile;
+// swiper.pagination.update(); 
+// }
+// window.addEventListener('resize', updatePaginationByWidth);
+
+// updatePaginationByWidth();
