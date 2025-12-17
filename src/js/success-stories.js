@@ -187,7 +187,6 @@ function initSwiper(sectionEl) {
       el: sectionEl.querySelector(SELECTORS.pagination),
       clickable: true,
       dynamicBullets: false,
-      
     },
 
     breakpoints: {
@@ -196,6 +195,7 @@ function initSwiper(sectionEl) {
     },
   });
 }
+
 // =====================
 // Boot
 // =====================
@@ -211,16 +211,20 @@ async function initSuccessStories() {
   try {
     const feedbacks = await fetchFeedbacks();
 
-    if (feedbacks.length < MIN_FEEDBACKS) {
+    // ✅ ФИКСИРОВАННОЕ КОЛИЧЕСТВО СЛАЙДОВ
+    const MAX_SLIDES = 5;
+    const limitedFeedbacks = feedbacks.slice(0, MAX_SLIDES);
+
+    // ✅ Проверяем уже ОГРАНИЧЕННЫЙ массив
+    if (limitedFeedbacks.length < MIN_FEEDBACKS) {
       showError(sectionEl, 'Недостатньо відгуків для відображення секції.');
       return;
     }
 
-    // 1️⃣ СНАЧАЛА рендерим слайды
-    renderSlides(wrapperEl, feedbacks);
-    
+    // 1️⃣ Рендерим РОВНО 5 слайдов
+    renderSlides(wrapperEl, limitedFeedbacks);
 
-    // 2️⃣ ТОЛЬКО ПОСЛЕ ЭТОГО создаём Swiper
+    // 2️⃣ Запускаем Swiper ПОСЛЕ рендера
     const swiper = initSwiper(sectionEl);
     if (!swiper) return;
 
