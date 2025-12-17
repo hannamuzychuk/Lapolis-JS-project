@@ -105,7 +105,6 @@
   transition: background-color 250ms ease, color 250ms ease, border 250ms ease;
 }
 
-/* Hover / Focus */
 .modal-adopt-btn:hover,
 .modal-adopt-btn:focus {
   background-color: rgba(238, 233, 227, 1);
@@ -113,13 +112,12 @@
   border: 1px solid rgba(136, 118, 92, 1);
 }
 
-/* Active */
 .modal-adopt-btn:active {
   background-color: #b3a48a;
   color: #1f1f1f;
 }
 
-/* Disabled */
+
 .modal-adopt-btn:disabled {
   background-color: #d9d3cb;
   border-color: #bdb6ad;
