@@ -114,6 +114,7 @@
   gap: 12px;
   margin-left: auto;
   transform: translateX(0);
+  z-index: 15;
 }
 
 /* buttons */
@@ -222,7 +223,6 @@
   transform: scale(1.2);
 }
 
-
 /* =========================
    Loader / Error (optional)
    ========================= */
@@ -251,7 +251,6 @@
   .success-stories__title {
     font-size: 36px;
   }
-
 }
 
 @media (min-width: 768px) {
@@ -274,7 +273,6 @@
   }
 
   .story-card {
-   
     min-height: 240px;
   }
 
