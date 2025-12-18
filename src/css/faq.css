@@ -1,7 +1,7 @@
 /* контейнер */
 .faq {
-  padding-bottom: 80px;
-  padding-top: 80px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 .faq-container {
   display: flex;
@@ -150,6 +150,10 @@
 }
 
 @media (min-width: 768px) {
+  .faq {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   .faq-item {
     min-height: auto;
   }
