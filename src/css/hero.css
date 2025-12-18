@@ -10,6 +10,8 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 .hero::before {
@@ -26,8 +28,6 @@
 }
 
 .hero-content {
-  padding-top: 64px;
-  padding-bottom: 115px;
   padding-left: 20px;
   width: calc(100% - 40px);
   display: flex;
@@ -58,10 +58,8 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   width: 171px;
   height: 45px;
-
   border: 1px solid #88765c;
   border-radius: 8px;
   background: #88765c;
@@ -112,9 +110,7 @@
   }
 
   .hero-content {
-    padding-top: 64px;
     padding-left: 32px;
-    padding-bottom: 235px;
     width: 704px;
   }
 
@@ -130,12 +126,12 @@
       url('../img/hero/hero-desktop.jpg') 1x,
       url('../img/hero/hero-desktop@2x.jpg') 2x
     );
+    padding-top: 128px;
+    padding-bottom: 128px;
   }
 
   .hero-content {
-    padding-top: 128px;
     padding-left: 64px;
-    padding-bottom: 413px;
     width: 622px;
   }
 
