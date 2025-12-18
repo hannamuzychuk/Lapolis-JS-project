@@ -100,29 +100,41 @@ export async function handlePaginationClick(e) {
 }
 
 export async function loadAnimals(append = false) {
-  const data = await fetchAnimals(currentCategory, currentPage, itemsPerPage);
+  try {
+    const delay = new Promise(res => setTimeout(res, 1000));
 
-  if (!data.animals) {
-    return false;
-  }
-  totalItems = data.totalItems;
-  totalPages = Math.ceil(totalItems / itemsPerPage);
+    const [data] = await Promise.all([
+      fetchAnimals(currentCategory, currentPage, itemsPerPage),
+      delay,
+    ]);
 
-  const animals = data.animals;
+    if (!data.animals) {
+      return false;
+    }
 
-  loadAndRenderAnimals(animals, append);
+    totalItems = data.totalItems;
+    totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  if (isDesktop()) {
-    renderPagination({
-      currentPage,
-      totalPages,
+    const animals = data.animals;
+
+    loadAndRenderAnimals(animals, append);
+
+    if (isDesktop()) {
+      renderPagination({
+        currentPage,
+        totalPages,
+      });
+
+      return false;
+    }
+
+    return currentPage < totalPages;
+  } catch (err) {
+    iziToast.error({
+      message: `Помилка завантаження тварин ${err}`,
     });
-    return false;
   }
-
-  return currentPage < totalPages;
 }
-
 export function loadAndRenderAnimals(animals, append = false) {
   if (append) {
     currentAnimals = currentAnimals.concat(animals);
@@ -150,14 +162,30 @@ function isDesktop() {
 }
 
 function scrollToAnimalsTop() {
+  const duration = 1000;
   const offset = 110;
-  const top =
+
+  const target =
     refs.animalsContainer.getBoundingClientRect().top +
     window.pageYOffset -
     offset;
 
-  window.scrollTo({
-    top,
-    behavior: 'smooth',
-  });
+  const start = window.pageYOffset;
+  const distance = target - start;
+  const startTime = performance.now();
+
+  function animateScroll(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+
+    window.scrollTo({
+      top: start + distance * progress,
+    });
+
+    if (progress < 1) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
+
+  requestAnimationFrame(animateScroll);
 }
