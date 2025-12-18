@@ -88,7 +88,7 @@ export function renderPagination() {
         data-action="prev"
         ${currentPage === 1 ? 'disabled' : ''}>
         <svg width="19" height="13">
-        <use href="/Lapolis-JS-project/assets/icons-D8Flmos2.svg#icon-left""></use>
+        <use href="/Lapolis-JS-project/assets/icons-D8Flmos2.svg#icon-left"></use>
       </svg>
       </button>
     </li>`;
