@@ -16,7 +16,6 @@ const ENDPOINT = 'API/feedbacks';
 const MIN_FEEDBACKS = 3;
 
 
-
 // SVG paths (Vite-safe)
 const STAR_OFF_URL = new URL('../img/success-svg/star-empty.svg', import.meta.url).href;
 const STAR_ON_URL = new URL('../img/success-svg/star-full.svg', import.meta.url).href;
@@ -45,8 +44,6 @@ async function fetchFeedbacks() {
 
   // backend returns: { feedbacks: [...], total, page, limit }
   const list = data?.feedbacks ?? [];
-
-
 
   return Array.isArray(list) ? list : [];
   
@@ -211,24 +208,21 @@ async function initSuccessStories() {
   try {
     const feedbacks = await fetchFeedbacks();
 
-    // ✅ ФИКСИРОВАННОЕ КОЛИЧЕСТВО СЛАЙДОВ
     const MAX_SLIDES = 5;
     const limitedFeedbacks = feedbacks.slice(0, MAX_SLIDES);
 
-    // ✅ Проверяем уже ОГРАНИЧЕННЫЙ массив
+    
     if (limitedFeedbacks.length < MIN_FEEDBACKS) {
       showError(sectionEl, 'Недостатньо відгуків для відображення секції.');
       return;
     }
 
-    // 1️⃣ Рендерим РОВНО 5 слайдов
+
     renderSlides(wrapperEl, limitedFeedbacks);
 
-    // 2️⃣ Запускаем Swiper ПОСЛЕ рендера
     const swiper = initSwiper(sectionEl);
     if (!swiper) return;
 
-    // 3️⃣ Инициализируем звёзды
     initRatings(sectionEl);
 
   } catch (err) {

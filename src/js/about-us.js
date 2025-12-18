@@ -42,11 +42,3 @@ function updatePaginationByWidth() {
 window.addEventListener('resize', () => {
   updatePaginationByWidth();
 });
-// function updatePaginationByWidth() {
-// const isMobile = window.innerWidth < 768;
-// swiper.params.pagination.dynamicBullets = isMobile;
-// swiper.pagination.update(); 
-// }
-// window.addEventListener('resize', updatePaginationByWidth);
-
-// updatePaginationByWidth();
