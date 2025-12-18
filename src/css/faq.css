@@ -1,4 +1,8 @@
 /* контейнер */
+.faq {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
 .faq-container {
   display: flex;
   flex-direction: column;
@@ -7,8 +11,6 @@
   background: #f6f4f1;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #02060a;
-  padding-bottom: 64px;
-  padding-top: 64px;
 }
 /* заголовок */
 .faq-title {
@@ -42,7 +44,11 @@
   --color-light-grey: #02060a;
   --color-grey: #02060a;
 }
-#faq-panel {
+#faq-panel-1,
+#faq-panel-2,
+#faq-panel-3,
+#faq-panel-4,
+#faq-panel-5 {
   padding-top: 20px;
 }
 /* Тригер аккордеона під макет */
@@ -138,12 +144,16 @@
   fill: none;
 }
 .icon-close svg {
-  stroke-width: 1;
+  stroke-width: 1.5;
   stroke: currentColor;
   fill: none;
 }
 
 @media (min-width: 768px) {
+  .faq {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   .faq-item {
     min-height: auto;
   }
