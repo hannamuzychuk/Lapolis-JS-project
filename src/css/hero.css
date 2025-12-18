@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   position: relative;
   padding-top: 64px;
-  padding-bottom: 64px;
+  padding-bottom: 115px;
 }
 
 .hero::before {
@@ -101,6 +101,8 @@
 @media screen and (min-width: 768px) {
   .hero {
     max-width: 768px;
+
+  padding-bottom: 235px;
     background-image: image-set(
       url('../img/hero/hero-tablet.webp') 1x,
       url('..//img/hero/hero-tablet@2x.webp') 2x
@@ -125,7 +127,7 @@
       url('../img/hero/hero-desktop@2x.webp') 2x
     );
     padding-top: 128px;
-    padding-bottom: 128px;
+    padding-bottom: 413px;
   }
 
   .hero-content {
