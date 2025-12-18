@@ -150,3 +150,11 @@ export function showLoader() {
 export function hideLoader() {
   refs.loader.classList.add('hidden');
 }
+
+export function showLoaderTop() {
+  refs.loaderTop.classList.remove('hidden');
+}
+
+export function hideLoaderTop() {
+  refs.loaderTop.classList.add('hidden');
+}

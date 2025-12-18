@@ -4,9 +4,11 @@ import { fetchAnimals } from './pets-list-api';
 import { refs } from './pets-list-refs';
 import {
   hideLoader,
+  hideLoaderTop,
   renderAnimals,
   renderPagination,
   showLoader,
+  showLoaderTop,
 } from './pets-list-render';
 
 export let currentAnimals = [];
@@ -34,7 +36,7 @@ export async function handleFilterClick(e) {
     refs.loadMoreBtn.style.display = 'none';
   }
 
-  showLoader();
+  showLoaderTop();
   try {
     await loadAnimals(false);
   } catch (err) {
@@ -42,7 +44,7 @@ export async function handleFilterClick(e) {
       message: `Помилка завантаження тварин ${err}`,
     });
   } finally {
-    hideLoader();
+    hideLoaderTop();
   }
 }
 
