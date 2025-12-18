@@ -1,9 +1,8 @@
 .hero {
-  min-width: 320px;
   margin: auto;
   background-image: image-set(
-    url('../img/hero/hero-mobile.jpg') 1x,
-    url('../img/hero/hero-mobile@2x.jpg') 2x
+    url('../img/hero/hero-mobile.webp') 1x,
+    url('../img/hero/hero-mobile@2x.webp') 2x
   );
   background-size: cover;
   background-position: center;
@@ -103,8 +102,8 @@
   .hero {
     max-width: 768px;
     background-image: image-set(
-      url('../img/hero/hero-tablet.jpg') 1x,
-      url('../img/hero/hero-tablet@2x.jpg') 2x
+      url('../img/hero/hero-tablet.webp') 1x,
+      url('..//img/hero/hero-tablet@2x.webp') 2x
     );
   }
 
@@ -122,8 +121,8 @@
   .hero {
     max-width: 1440px;
     background-image: image-set(
-      url('../img/hero/hero-desktop.jpg') 1x,
-      url('../img/hero/hero-desktop@2x.jpg') 2x
+      url('../img/hero/hero-desktop.webp') 1x,
+      url('../img/hero/hero-desktop@2x.webp') 2x
     );
     padding-top: 128px;
     padding-bottom: 128px;
