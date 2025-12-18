@@ -3,6 +3,9 @@
 ::after {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: #f6f4f1;
