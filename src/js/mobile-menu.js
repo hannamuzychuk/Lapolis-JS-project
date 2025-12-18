@@ -15,11 +15,20 @@
   });
 
   function toggleModal() {
-    refs.modal.classList.toggle('is-open');
+    const isOpen = refs.modal.classList.toggle('is-open');
+    toggleBodyScroll(isOpen);
   }
 
   function closeModal() {
     refs.modal.classList.remove('is-open');
+    toggleBodyScroll(false);
+  }
+  function toggleBodyScroll(disable) {
+    if (disable) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   function scrollToSection(sectionId) {

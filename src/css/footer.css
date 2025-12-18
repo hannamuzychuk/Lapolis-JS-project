@@ -158,10 +158,6 @@ transform: scale(1.2);
 }
 
 @media only screen and (min-width: 768px){ 
-    .footer {
-        max-width: 768px;
-    }
-    
     .footer-box-logo {
         margin-bottom: 50px;
         }
@@ -183,6 +179,5 @@ transform: scale(1.2);
 .footer {
         padding-top: 64px;
         padding-bottom: 64px;
-        max-width: 1440px;
     }
 }
