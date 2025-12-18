@@ -18,7 +18,9 @@
   visibility: visible;
   pointer-events: auto;
 }
-
+.no-scroll {
+    overflow: hidden;
+}
 
 .mobile-menu-container {
 

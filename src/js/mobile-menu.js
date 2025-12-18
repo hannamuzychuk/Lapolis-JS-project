@@ -16,10 +16,12 @@
 
   function toggleModal() {
     refs.modal.classList.toggle('is-open');
+    document.body.classList.add('no-scroll');
   }
 
   function closeModal() {
     refs.modal.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
   }
 
   function scrollToSection(sectionId) {
