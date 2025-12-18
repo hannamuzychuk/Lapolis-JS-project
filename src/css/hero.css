@@ -1,6 +1,5 @@
 .hero {
   min-width: 320px;
-  min-height: 100vh;
   margin: auto;
   background-image: image-set(
     url('../img/hero/hero-mobile.jpg') 1x,

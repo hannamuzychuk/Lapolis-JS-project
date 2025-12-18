@@ -3,69 +3,61 @@
     openModalBtn: document.querySelector('[data-menu-open]'),
     closeModalBtn: document.querySelector('[data-menu-close]'),
     modal: document.querySelector('[data-menu]'),
-    menuLinks: document.querySelectorAll('[data-scroll-to]'), 
+    menuLinks: document.querySelectorAll('[data-scroll-to]'),
   };
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.openModalBtn.addEventListener('click', openModal);
   refs.closeModalBtn.addEventListener('click', closeModal);
 
+  function openModal() {
+    refs.modal.classList.add('is-open');
+    toggleBodyScroll(true);
 
-  refs.menuLinks.forEach(link => {
-    link.addEventListener('click', handleMenuClick);
-  });
-
-  function toggleModal() {
-    const isOpen = refs.modal.classList.toggle('is-open');
-    toggleBodyScroll(isOpen);
+  
+    refs.menuLinks.forEach(link =>
+      link.addEventListener('click', handleMenuClick)
+    );
+    refs.modal.addEventListener('click', handleBackdropClick);
+    document.addEventListener('keydown', handleEscPress);
   }
 
   function closeModal() {
     refs.modal.classList.remove('is-open');
     toggleBodyScroll(false);
-  }
-  function toggleBodyScroll(disable) {
-    if (disable) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+
+    
+    refs.menuLinks.forEach(link =>
+      link.removeEventListener('click', handleMenuClick)
+    );
+    refs.modal.removeEventListener('click', handleBackdropClick);
+    document.removeEventListener('keydown', handleEscPress);
   }
 
-  function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
+  function toggleBodyScroll(disable) {
+    document.body.style.overflow = disable ? 'hidden' : '';
   }
 
   function handleMenuClick(event) {
     event.preventDefault();
-    
     const targetSection = event.currentTarget.dataset.scrollTo;
-    
     closeModal();
-    
     setTimeout(() => {
-      scrollToSection(targetSection);
+      document.getElementById(targetSection)?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
     }, 300);
   }
 
-
-  refs.modal.addEventListener('click', (event) => {
+  function handleBackdropClick(event) {
     if (event.target === refs.modal) {
       closeModal();
     }
-  });
+  }
 
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && refs.modal.classList.contains('is-open')) {
+  function handleEscPress(event) {
+    if (event.key === 'Escape') {
       closeModal();
     }
-  });
+  }
 })();
-
