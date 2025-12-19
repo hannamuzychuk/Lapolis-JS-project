@@ -156,7 +156,7 @@ font-size: 16px;
     inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
     inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
-}
+
 
 .header-nav-list-item:focus, .header-nav-list-item:hover{
     text-decoration: underline;
@@ -174,10 +174,8 @@ font-size: 16px;
   .header.scrolled {
     position: sticky;
     top: 10px;
-              min-width: 1312px;
+  min-width: 1312px;
   max-width: 1440px;
-
-   
     background-color: rgb(180, 165, 142);
     border-radius: 60px;
     margin: 0 auto;
@@ -188,6 +186,6 @@ font-size: 16px;
   .header.scrolled:focus {
     opacity: 1;
   }
-
+}
 
 
