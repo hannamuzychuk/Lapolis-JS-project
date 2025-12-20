@@ -1,0 +1,69 @@
+<section class="success-stories" id="success-stories">
+  <div
+    class="container success-stories__container"
+    id="success-stories-container"
+  >
+    <h2 class="success-stories__title" id="success-stories-title">
+      Щасливі історії, що надихають
+    </h2>
+
+    <p class="success-stories__subtitle" id="success-stories-subtitle">
+      Ці хвостики вже знайшли свій дім. Ваш майбутній друг теж чекає на вас
+    </p>
+
+    <div class="success-stories__slider" id="success-stories-slider">
+      <div
+        class="swiper success-stories__swiper"
+        id="success-stories-swiper"
+        data-success-swiper
+      >
+        <div class="swiper-wrapper" id="success-stories-wrapper">
+          <!-- Slides render here from API (/feedbacks) -->
+        </div>
+      </div>
+
+      <div class="success-stories__controls" id="success-stories-controls">
+        <div
+          class="swiper-pagination success-stories__pagination"
+          id="success-stories-pagination"
+        ></div>
+
+        <div class="success-stories__nav" id="success-stories-navigation">
+          <button
+            class="success-stories__btn success-stories__btn--prev"
+            id="success-stories-button-prev"
+            type="button"
+            aria-label="Попередній відгук"
+            data-success-prev
+          >
+            <svg
+              class="success-stories__btn-icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="./img/icons.svg#icon-left"></use>
+            </svg>
+          </button>
+
+          <button
+            class="success-stories__btn success-stories__btn--next"
+            id="success-stories-button-next"
+            type="button"
+            aria-label="Наступний відгук"
+            data-success-next
+          >
+            <svg
+              class="success-stories__btn-icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="./img/icons.svg#icon-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
