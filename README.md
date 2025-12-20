@@ -55,7 +55,7 @@ GET /feedbacks — відгуки POST /orders — заявка на знайо�
 
 © Авторські права © 2025 Хатинка Лапок Всі права захищені 🐾
 
-atynka Lapok is a responsive web application designed to help homeless animals
+Hatynka Lapok is a responsive web application designed to help homeless animals
 find a new home. The project allows users to browse pets, filter them by
 categories, read success stories, and submit adoption requests ❤️
 
