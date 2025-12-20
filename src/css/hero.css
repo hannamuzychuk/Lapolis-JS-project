@@ -13,6 +13,8 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  padding-top: 64px;
+  padding-bottom: 115px;
 }
 
 .hero-background::before {
