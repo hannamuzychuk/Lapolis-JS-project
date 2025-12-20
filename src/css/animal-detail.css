@@ -22,7 +22,12 @@
 }
 
 .close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
+  width: 32px;
+  height: 32px;
   top: 16px;
   right: 16px;
   font-size: 35px;
@@ -31,6 +36,12 @@
   background-color: transparent;
   color: black;
   padding: 0;
+}
+
+.close-svg {
+  width: 13.5px;
+  height: 13.5px;
+  stroke: #02060a;
 }
 .modal-info-head {
   display: flex;
@@ -110,7 +121,6 @@
   }
 }
 
-
 .modal-adopt-btn:hover,
 .modal-adopt-btn:focus {
   background-color: rgba(238, 233, 227, 1);
@@ -122,7 +132,6 @@
   background-color: #b3a48a;
   color: #1f1f1f;
 }
-
 
 .modal-adopt-btn:disabled {
   background-color: #d9d3cb;
