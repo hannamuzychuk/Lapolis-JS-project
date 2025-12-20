@@ -183,7 +183,7 @@ function initSwiper(sectionEl) {
     pagination: {
       el: sectionEl.querySelector(SELECTORS.pagination),
       clickable: true,
-      dynamicBullets: false,
+      dynamicBullets: window.innerWidth < 768,
       dynamicMainBullets: 6,        
     },
 
