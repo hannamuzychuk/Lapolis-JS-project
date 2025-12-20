@@ -1,4 +1,8 @@
 /* контейнер */
+.faq {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
 .faq-container {
   display: flex;
   flex-direction: column;
@@ -7,8 +11,6 @@
   background: #f6f4f1;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #02060a;
-  padding-bottom: 64px;
-  padding-top: 64px;
 }
 /* заголовок */
 .faq-title {
@@ -24,7 +26,6 @@
 
 /* картка */
 .faq-item {
-  min-width: 100%;
   min-height: 112px;
   background: #eee9e3;
   border: 0 solid rgba(2, 6, 10, 0.15);
@@ -42,7 +43,11 @@
   --color-light-grey: #02060a;
   --color-grey: #02060a;
 }
-#faq-panel {
+#faq-panel-1,
+#faq-panel-2,
+#faq-panel-3,
+#faq-panel-4,
+#faq-panel-5 {
   padding-top: 20px;
 }
 /* Тригер аккордеона під макет */
@@ -83,6 +88,9 @@
   padding-left: 1.25rem;
   margin: 8px 0 16px;
 }
+.ac .ac-panel .ac-text {
+  padding: 8px 0 8px;
+}
 
 /* Міжпунктні відступи */
 .faq-list > li:not(:last-child),
@@ -101,8 +109,8 @@
 /* Іконки */
 .faq-icons {
   flex: 0 0 14px;
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
   position: relative;
   margin-left: 16px;
 }
@@ -116,7 +124,7 @@
 
 /* Базовий колір іконок */
 .faq-icons svg {
-  color: #02060a;
+  stroke: #02060a;
 }
 
 /* Перемикання + / close */
@@ -138,7 +146,7 @@
   fill: none;
 }
 .icon-close svg {
-  stroke-width: 1;
+  stroke-width: 1.5;
   stroke: currentColor;
   fill: none;
 }
@@ -150,6 +158,11 @@
 }
 
 @media (min-width: 1440px) {
+  .faq {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
   .faq-item {
     max-width: 864px;
   }

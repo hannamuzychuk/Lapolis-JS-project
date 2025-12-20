@@ -72,6 +72,9 @@
   border-color: #88765c;
   color: rgba(2, 6, 10, 1);
 }
+.order-form textarea{
+  resize: none;
+}
 
 .submit-btn {
   width: 100%;
