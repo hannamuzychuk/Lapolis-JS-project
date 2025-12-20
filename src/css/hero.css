@@ -12,21 +12,16 @@
   padding-bottom: 115px;
 }
 
+
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
+background: linear-gradient(90deg, rgba(62, 54, 38, 0.74) 0%, rgba(62, 54, 38, 0) 100%);
 }
 
 .hero-content {
-  padding-left: 20px;
   width: calc(100% - 40px);
   display: flex;
   flex-direction: column;
@@ -110,7 +105,6 @@
   }
 
   .hero-content {
-    padding-left: 32px;
     width: 704px;
   }
 
@@ -131,7 +125,6 @@
   }
 
   .hero-content {
-    padding-left: 64px;
     width: 622px;
   }
 

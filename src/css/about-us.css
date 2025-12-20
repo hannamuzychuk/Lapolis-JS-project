@@ -120,13 +120,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-left: 10px;
   padding: 12px;
 }
 
-#about-left-svg{
-  width: 24px;
-  height: 24px;
-}
 #about-swip-right{
   width: 48px;
   height: 48px;
@@ -139,10 +136,7 @@
   cursor: pointer;
   padding: 12px;
 }
-#about-right-svg{
-  width: 24px;
-  height: 24px;
-}
+
 #about-swip-left:active,
 #about-swip-right:active {
  background-color: #EEE9E3;
