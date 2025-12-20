@@ -1,18 +1,16 @@
 import { currentAnimals } from './pets-list/pet-list-handlers';
 import { form } from './order-model';
+import spriteURL from '../img/icons.svg';
 
 export const modal = document.querySelector('.modal-overlay');
 const infoModal = modal.querySelector('.info-modal');
 const orderModal = modal.querySelector('.order-modal');
-
-
 
 function onEscKeydown(e) {
   if (e.key === 'Escape') {
     closeModal();
   }
 }
-
 
 function openModal() {
   modal.classList.remove('hidden');
@@ -32,7 +30,6 @@ export function openOrderModal(infoModal, orderModal) {
   document.body.classList.add('no-scroll');
 }
 
-
 export function setupModal() {
   document.addEventListener('click', e => {
     if (e.target.classList.contains('more-btn')) {
@@ -43,7 +40,9 @@ export function setupModal() {
       form.dataset.animalId = animalId;
 
       infoModal.innerHTML = `
-        <button class="close-btn">&times;</button>
+        <button class="close-btn"><svg class="close-svg" width="32" height="32">
+        <use href="${spriteURL}#icon-close"></use>
+      </svg></button>
         <div class="modal-body">
           <div class="modal-left">
             <img class="modal-animal-img" src="${animal.image}" alt="${animal.name}" />
