@@ -52,14 +52,14 @@ Accordion Library Star Rating Library
 📂 Над проектом працювали:
 
 🦸‍♂️ Тімлід, розробниця Анна Музичук
-📋 Скрам-майстер, розробниця Андрій Баранович 
+📋 Скрам-майстер, розробник Андрій Баранович 
 🛠️ Технічна підтримка, розробник Валерій Брикалов
-💻 Розробник Коломейчук Тетяна
+💻 Розробниця Коломейчук Тетяна
 💻 Розробник Андрій Стороженко
 💻 Розробник Андрій Тернов
 💻 Розробник Назар Ізмаїлов
 💻 Розробник Евген Костенко
-💻 Розробник Маргарита Кравцова
+💻 Розробниця Маргарита Кравцова
 
 
 🔌 API GET /api/categories — категорії тварин GET /api/animals — список тварин
@@ -113,12 +113,34 @@ cursor styles for all interactive elements.
 🛠️ Technologies HTML5 CSS3 JavaScript (ES6+) Swiper.js SweetAlert2 /
 BasicLightbox Accordion Library Star Rating Library
 
-▶️ Getting Started git clone https://github.com/username/hatynka-lapok.git cd
-hatynka-lapok Open index.html in your browser or run using Live Server
+▶️Project Setup
 
-📂 Project Structure hatynka-lapok/ │ ├── index.html ├── css/ │ └── styles.css
-├── js/ │ ├── api.js │ ├── header.js │ ├── pets.js │ ├── modals.js │ └──
-sliders.js ├── assets/ │ ├── images/ │ └── icons/ └── README.md
+Ensure Node.js LTS version is installed on your computer.
+
+Install the project’s core dependencies by running the following command in your terminal:
+
+npm install
+
+
+Start the development mode with the command:
+
+npm run dev
+
+
+Open your browser and go to http://localhost:5173
+.
+The page will automatically reload whenever you save changes to the project files.
+Project Team
+
+🦸‍♂️ Team Lead, Developer: Anna Muzychuk
+📋 Scrum Master, Developer: Andrii Baranovych
+🛠️ Technical Support, Developer: Valerii Brykalov
+💻 Developer: Tetiana Kolomeichuk
+💻 Developer: Andrii Storozhenko
+💻 Developer: Andrii Ternov
+💻 Developer: Nazar Izmailov
+💻 Developer: Yevhen Kostenko
+💻 Developer: Marharyta Kravtsova
 
 🔌 API GET /api/categories — pet categories GET /api/animals — animals list GET
 /feedbacks — user reviews POST /orders — adoption request
