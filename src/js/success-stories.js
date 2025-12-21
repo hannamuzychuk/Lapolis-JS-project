@@ -15,11 +15,17 @@ const API_BASE_URL = 'https://paw-hut.b.goit.study';
 const ENDPOINT = 'API/feedbacks';
 const MIN_FEEDBACKS = 3;
 
-
 // SVG paths (Vite-safe)
-const STAR_OFF_URL = new URL('../img/success-svg/star-empty.svg', import.meta.url).href;
-const STAR_ON_URL = new URL('../img/success-svg/star-full.svg', import.meta.url).href;
-const STAR_HALF_URL = new URL('../img/success-svg/star-half.svg', import.meta.url).href;
+const STAR_OFF_URL = new URL(
+  '../img/success-svg/star-empty.svg',
+  import.meta.url
+).href;
+const STAR_ON_URL = new URL('../img/success-svg/star-full.svg', import.meta.url)
+  .href;
+const STAR_HALF_URL = new URL(
+  '../img/success-svg/star-half.svg',
+  import.meta.url
+).href;
 
 // Selectors
 const SELECTORS = {
@@ -46,10 +52,7 @@ async function fetchFeedbacks() {
   const list = data?.feedbacks ?? [];
 
   return Array.isArray(list) ? list : [];
-  
-
 }
-
 
 // =====================
 // UI helpers (loader / error)
@@ -107,7 +110,7 @@ function normalizeRating(value) {
   if (Number.isNaN(num)) return 0;
 
   const clamped = Math.max(0, Math.min(5, num));
-  return Math.round(clamped * 2) / 2; // шаг 0.5
+  return Math.round(clamped * 2) / 2;
 }
 
 function createSlideMarkup(item) {
@@ -129,7 +132,6 @@ function createSlideMarkup(item) {
   `;
 }
 
-
 function renderSlides(wrapperEl, feedbacks) {
   wrapperEl.innerHTML = feedbacks.map(createSlideMarkup).join('');
 }
@@ -138,7 +140,7 @@ function renderSlides(wrapperEl, feedbacks) {
 // Rating (raty-js)
 // =====================
 function initRatings(rootEl) {
-  rootEl.querySelectorAll('.story-card__rating').forEach((ratingEl) => {
+  rootEl.querySelectorAll('.story-card__rating').forEach(ratingEl => {
     const score = normalizeRating(ratingEl.dataset.rating);
     const container = ratingEl.querySelector('.rating-js');
     if (!container) return;
@@ -155,11 +157,9 @@ function initRatings(rootEl) {
       starHalf: STAR_HALF_URL,
     });
 
-    instance.init(); 
+    instance.init();
   });
 }
-
-
 
 // =====================
 // Swiper
@@ -170,8 +170,8 @@ function initSwiper(sectionEl) {
 
   return new Swiper(swiperEl, {
     modules: [Navigation, Pagination],
-    slidesPerView: 1,
-    spaceBetween: 24,
+    slidesPerView: 2,
+    spaceBetween: 8,
     speed: 500,
 
     navigation: {
@@ -183,13 +183,7 @@ function initSwiper(sectionEl) {
     pagination: {
       el: sectionEl.querySelector(SELECTORS.pagination),
       clickable: true,
-      dynamicBullets: window.innerWidth < 768,
-      dynamicMainBullets: 6,        
-    },
-
-    breakpoints: {
-      768: { slidesPerView: 2, spaceBetween: 24 },
-      1440: { slidesPerView: 2, spaceBetween: 32 },
+      dynamicMainBullets: 1,
     },
   });
 }
@@ -212,12 +206,10 @@ async function initSuccessStories() {
     const MAX_SLIDES = 5;
     const limitedFeedbacks = feedbacks.slice(0, MAX_SLIDES);
 
-    
     if (limitedFeedbacks.length < MIN_FEEDBACKS) {
       showError(sectionEl, 'Недостатньо відгуків для відображення секції.');
       return;
     }
-
 
     renderSlides(wrapperEl, limitedFeedbacks);
 
@@ -225,7 +217,6 @@ async function initSuccessStories() {
     if (!swiper) return;
 
     initRatings(sectionEl);
-
   } catch (err) {
     console.error('Success stories error:', err);
     showError(sectionEl, 'Не вдалося завантажити відгуки. Спробуйте пізніше.');

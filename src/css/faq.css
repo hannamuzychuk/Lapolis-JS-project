@@ -89,7 +89,11 @@
   margin: 8px 0 16px;
 }
 .ac .ac-panel .ac-text {
-  padding: 8px 0 8px;
+  padding: 8px 8px 0;
+}
+
+.ac {
+  margin-bottom: 0px !important;
 }
 
 /* Міжпунктні відступи */
