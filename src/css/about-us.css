@@ -1,29 +1,28 @@
- /* скдання актів кнопки */
- .swiper-btn{
-  appearance: none;}
-  
-  #about-us {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
+/* скдання актів кнопки */
+.swiper-btn {
+  appearance: none;
+}
 
-  .about-title {
+#about-us {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.about-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 120%;
   text-align: center;
   margin-bottom: 40px;
-  
 }
 
 /* свайпер */
 .about-swiper {
   position: relative;
-    height: 402px;
+  height: 402px;
   margin-bottom: 24px;
-   width: 100%;
+  width: 100%;
   overflow: hidden;
-  
 }
 /* Ckfql
 */
@@ -38,7 +37,6 @@
   width: 335px;
   height: 402px;
   object-fit: cover;
-  
 }
 /* текст */
 .about-text {
@@ -50,9 +48,8 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #F6F4F1;
+  color: #f6f4f1;
   /* padding: 8px; */
-  
 }
 
 /* пагінація і кнопки */
@@ -62,11 +59,10 @@
   width: 100%;
   height: 64px;
   flex-direction: row;
-  align-items: center;          
-  justify-content: space-between;      
+  align-items: center;
+  justify-content: space-between;
   gap: 16px;
-  padding-right: 8px;                
- 
+  padding-right: 8px;
 }
 
 /* зкидання абсолютної позиції */
@@ -84,9 +80,8 @@
 .about-controls .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
-  opacity: 0.6;
-  background: #02060A;           
-  transition: transform .2s, opacity .2s;
+  background: #02060a;
+  transition: transform 0.2s, opacity 0.2s;
 }
 .about-controls .swiper-pagination-bullet-active {
   opacity: 1;
@@ -99,23 +94,39 @@
   gap: 8px;
   align-items: center;
 }
- #about-swip-button{
+#about-swip-button {
   border: 2px solid;
   padding: 8px 12px;
   border-radius: 8px;
-  border-color: #C3B49D;
-  background: #EEE9E3;
+  border-color: #c3b49d;
+  background: #eee9e3;
   cursor: pointer;
 }
-.swiper-btn:disabled { opacity: .5; cursor: default; }
+.swiper-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
 
-
- #about-swip-left{  
+#about-swip-left {
   width: 48px;
   height: 48px;
-  border: 1px solid #C3B49D;
+  border: 1px solid #c3b49d;
   border-radius: 8px;
-  background: #EEE9E3;
+  background: #eee9e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 12px;
+}
+
+#about-swip-right {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #c3b49d;
+  border-radius: 8px;
+  background: #eee9e3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,38 +134,19 @@
   padding: 12px;
 }
 
-#about-left-svg{
-  width: 24px;
-  height: 24px;
-}
-#about-swip-right{
-  width: 48px;
-  height: 48px;
-  border: 1px solid #C3B49D;
-  border-radius: 8px;
-  background: #EEE9E3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 12px;
-}
-#about-right-svg{
-  width: 24px;
-  height: 24px;
-}
 #about-swip-left:active,
 #about-swip-right:active {
- background-color: #EEE9E3;
- box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03), inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  background-color: #eee9e3;
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
 /* ховер фокус булетів */
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover,
 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):focus {
-  background-color: rgba(2, 6, 10, 0.8); 
-  opacity: 0.9;                          
-  transform: scale(1.2);                  
+  background-color: rgba(2, 6, 10, 0.8);
+  opacity: 0.9;
+  transform: scale(1.2);
 }
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   #about-us {
@@ -163,82 +155,79 @@
     padding-bottom: 64px;
   }
   .about-us .container {
-  align-items: center;
-  
-}
-.about-title {
-text-align: center;
-}
-
-.about-swiper {
- height: 404px;
- align-items: center;
-}
-
-.about-slide {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 24px;
-}
-
-.about-img {
-  width: 704px;
-  height: auto;
-  object-fit: cover;
-  
-}
-.about-text {
-   bottom: 32px;
-   left: 32px;
-  right: 124px;
-}
-.about-controls {
-  position: relative;
-  width: 100%;
-  display: flex;
-  height: 28px;
-  flex-direction: row;
-  align-items: center; 
-  justify-content: center;        
-      
-  gap: 16px;
-  padding-right: 8px;                
-}
-.about-nav{
-  position: absolute;
-  gap: 664px;
-  top: -252px ;
-  z-index: 10;
-  justify-content: center;
+    align-items: center;
+  }
+  .about-title {
+    text-align: center;
   }
 
+  .about-swiper {
+    height: 404px;
+    align-items: center;
+  }
 
-#about-swip-left:not(.swiper-button-disabled):hover,
-#about-swip-right:not(.swiper-button-disabled):hover,
-#about-swip-left:not(.swiper-button-disabled):focus,
-#about-swip-right:not(.swiper-button-disabled):focus {
-  background-color: #EEE9E3;
-  border-color:rgba(2, 6, 10, 0.6);
-}
+  .about-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 24px;
+  }
+
+  .about-img {
+    width: 704px;
+    height: auto;
+    object-fit: cover;
+  }
+  .about-text {
+    bottom: 32px;
+    left: 32px;
+    right: 124px;
+  }
+  .about-controls {
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 28px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+    padding-right: 8px;
+  }
+  .about-nav {
+    position: absolute;
+    gap: 664px;
+    top: -252px;
+    z-index: 10;
+    justify-content: center;
+  }
+
+  #about-swip-left:not(.swiper-button-disabled):hover,
+  #about-swip-right:not(.swiper-button-disabled):hover,
+  #about-swip-left:not(.swiper-button-disabled):focus,
+  #about-swip-right:not(.swiper-button-disabled):focus {
+    background-color: #eee9e3;
+    border-color: rgba(2, 6, 10, 0.6);
+  }
 }
 
 .swiper-button-disabled {
-  cursor: default;        
-  pointer-events: none;   
+  cursor: default;
+  pointer-events: none;
 }
 
- @media screen and (min-width: 1440px) {
-   #about-us {
+@media screen and (min-width: 1440px) {
+  #about-us {
     padding-top: 80px;
     padding-bottom: 80px;
   }
-  
+
   .about-title {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 48px; 
+    font-size: 48px;
     line-height: 120%;
     text-align: center;
     margin-bottom: 40px;
@@ -275,46 +264,39 @@ text-align: center;
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
-    
   }
 
   /* Булети */
 
-.about-controls .swiper-pagination {
-position: static;
-flex: 1 1 100%;
-text-align: center;
-margin: 0;
-}
-
-
- .about-controls {
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 16px;
-padding-right: 8px;
-height: 64px;
-}
-.about-nav{
-  position: absolute;
-  gap: 1272px;
-  top: -432px ;
-  z-index: 10;
-  justify-content: center;
+  .about-controls .swiper-pagination {
+    position: static;
+    flex: 1 1 100%;
+    text-align: center;
+    margin: 0;
   }
 
+  .about-controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding-right: 8px;
+    height: 64px;
+  }
+  .about-nav {
+    position: absolute;
+    gap: 1272px;
+    top: -432px;
+    z-index: 10;
+    justify-content: center;
+  }
 
   #about-swip-left:not(.swiper-button-disabled):hover,
-#about-swip-right:not(.swiper-button-disabled):hover,
-#about-swip-left:not(.swiper-button-disabled):focus,
-#about-swip-right:not(.swiper-button-disabled):focus {
-  background-color: #EEE9E3;
-  border-color:rgba(2, 6, 10, 0.6);
+  #about-swip-right:not(.swiper-button-disabled):hover,
+  #about-swip-left:not(.swiper-button-disabled):focus,
+  #about-swip-right:not(.swiper-button-disabled):focus {
+    background-color: #eee9e3;
+    border-color: rgba(2, 6, 10, 0.6);
+  }
 }
- }
-
-
-
-  

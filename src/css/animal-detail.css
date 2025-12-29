@@ -9,6 +9,20 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal {
@@ -19,6 +33,16 @@
   max-height: 80%;
   overflow-y: auto;
   position: relative;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: 
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.modal-overlay:not(.hidden) .modal {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .close-btn {
@@ -105,7 +129,7 @@
 .modal-adopt-btn {
   width: 295px;
   height: 45px;
-  background-color: #8b7155;
+  background-color: rgba(136, 118, 92, 1);
   color: #fff;
   border: none;
   padding: 12px 24px;

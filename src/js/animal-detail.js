@@ -41,7 +41,7 @@ export function setupModal() {
 
       infoModal.innerHTML = `
         <button class="close-btn"><svg class="close-svg" width="32" height="32">
-        <use href="${spriteURL}#icon-close"></use>
+        <use class="close-use" href="${spriteURL}#icon-close"></use>
       </svg></button>
         <div class="modal-body">
           <div class="modal-left">
@@ -71,7 +71,9 @@ export function setupModal() {
 
     if (
       e.target.classList.contains('close-btn') ||
-      e.target.classList.contains('modal-overlay')
+      e.target.classList.contains('modal-overlay') ||
+      e.target.classList.contains('close-svg') ||
+      e.target.classList.contains('close-use')
     ) {
       closeModal();
       return;
